@@ -14,7 +14,7 @@ automations:
       run:
         - action: add-reviewers@v1
           args:
-            reviewers: {{ calc.owners }}
+            reviewers: ['saharAvishag']
   run_e2e_tests:
       if:
         - true

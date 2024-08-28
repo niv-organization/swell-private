@@ -23,14 +23,14 @@ automations:
         - action: add-comment@v1
           args:
             comment: |
-              'nSWLLiv new rules'
+              'new rules'
   auto_merge_label:
     if:
       - true
     run:
       - action: merge@v1
         args:
-          wait_for_all_checks: true
+          wait_for_all_checks: false
 calc:
   owners: {{ repo | rankByGitBlame(gt=25) }}
 

@@ -16,21 +16,22 @@ automations:
         args:
           label: 'tests'
       - action: approve@v1
+
   add_comment:
-      if:
-        - true
-      run:
-        - action: add-comment@v1
-          args:
-            comment: |
-              'new rules'
-  auto_merge_label:
     if:
-      - true
+      - {{ pr.title | includes(term="add_comment") }}
     run:
-      - action: merge@v1
+      - action: add-comment@v1
         args:
-          wait_for_all_checks: false
+          comment: "Hello {{ pr.author }} from gitstream :tada:"
+
+//  auto_merge_label:
+//    if:
+//      - true
+//    run:
+//      - action: merge@v1
+//        args:
+//          wait_for_all_checks: false
 calc:
   owners: {{ repo | rankByGitBlame(gt=25) }}
 

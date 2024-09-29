@@ -10,14 +10,14 @@ config:
 automations:
   assign_code_editors:
       if:
-        - true
+        - false
       run:
         - action: add-reviewers@v1
           args:
             reviewers: ['saharAvishag']
   run_e2e_tests:
       if:
-        - true
+        - false
       run:
         - action: add-comment@v1
           args:

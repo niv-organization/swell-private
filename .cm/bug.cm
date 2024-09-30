@@ -1,27 +1,118 @@
 # -*- mode: yaml -*-
-
+# This example configuration for provides basic automations to get started with gitStream.
+# View the gitStream quickstart for more examples: https://docs.gitstream.cm/quick-start/
 manifest:
   version: 1.0
- 
-config:
-  admin:
-    users: ['nivSwisa1']
-
+{% set ticketid = "" %}
+{% for ticket in tickets %}
+{% if (ticket | includes(regex=r/.+/)) %}
+{% set ticketid = ticket %}
+{% endif %}
+{% endfor %}
 automations:
-  assign_code_editors:
-      if:
-        - false
-      run:
-        - action: add-reviewers@v1
-          args:
-            reviewers: ['saharAvishag']
-  run_e2e_tests:
-      if:
-        - false
-      run:
-        - action: add-comment@v1
-          args:
-            comment: |
-              'Swell rules'
+  # Adds a label if branch is a bug fix
+  bug_label:
+    if:
+      - {{ branch.name | includes(term='bug') }}
+    run:
+      - action: add-label@v1
+        args:
+          label: "bug"
+          color: '#E94637'
+  # Adds a label if branch is a new feature
+  feature_label:
+    if:
+      - {{ branch.name | includes(term='feature') }}
+    run:
+      - action: add-label@v1
+        args:
+          label: "feature"
+          color: '#37E946'
+  # Adds a label if branch is a task
+  task_label:
+    if:
+      - {{ branch.name | includes(term='task') }}
+    run:
+      - action: add-label@v1
+        args:
+          label: "task"
+          color: '#379de9'
+  # Add a label that indicates how may unresolved threads are there
+  label_unresolved_threads:
+    if:
+      - {{ pr.status == 'open' }}
+      - {{ pr.unresolved_threads }}
+    run:
+      - action: add-label@v1
+        args:
+          label: 🚨 {{ pr.unresolved_threads }} Unresolved Thread(s)
+          color: {{ colors.yellow }}
+  # Add a label that indicates how many minutes it will take to review the PR.
+  estimated_time_to_review:
+    if:
+      - true
+    run:
+      - action: add-label@v1
+      # etr is defined in the last section of this example
+        args:
+          label: "{{ calc.etr }} min review"
+          color: {{ 'E94637' if (calc.etr >= 20) else ('FBBD10' if (calc.etr >= 5) else '36A853') }}
+  # Post a comment that lists the best experts for the files that were modified.
+  code_experts:
+    if:
+      - true
+    run:
+      # More info about explainCodeExperts: https://docs.gitstream.cm/filter-functions/#explaincodeexperts
+      - action: explain-code-experts@v1
+        args:
+          gt: 5
+          verbose: false
+  # Add a label if branch is a version bump by renovate bot
+  renovate:
+    if:
+      - {{ branch.author_name | includes(term='Renovate') }}
+    run:
+      - action: add-label@v1
+        args:
+          label: 'renovate'
+          color: '#c5def5'
+  # Should auto approve all renovate PRs for minor or patch changes
+  renovate_auto_approval:
+    if:
+      - {{ branch.author_name | includes(term='Renovate') }}
+      - {{ branch.name | includes(list=[ 'minor', 'patch' ]) }}
+      - {{ files | match(list=files_auto_approved) }}
+    run:
+      - action: add-label@v1
+        args:
+          label: 'auto-approval'
+          color: '#c2e0c6'
+      - action: approve@v1
+      - action: add-comment@v1
+        args:
+          comment: |
+            This PR was auto approved by gitstream.         
+  
+  # Would add a comment with a link to JIRA item
+  comment_issue_tracker:
+    if:
+      - {{ has.ticket_in_title or has.ticket_in_branch }}
+    run:
+      - action: add-comment@v1
+        args:
+          comment: Issue Tracker Link - [{{ticketid}}]({{tracker.jira.baseurl}}{{ticketid}})
+# The next function calculates the estimated time to review and makes it available in the automation above.
 calc:
-  owners: {{ repo | rankByGitBlame(gt=25) }}
+  etr: {{ branch | estimatedReviewTime }}
+files_auto_approved:
+  - gradle.properties
+has:
+  ticket_in_title: {{ pr.title | includes(regex=tracker.jira.pattern) }}
+  ticket_in_branch: {{ branch.name | includes(regex=tracker.jira.pattern) }}
+tracker:
+  jira:
+    baseurl: https://coindirectworld.atlassian.net/browse/
+    pattern: r/\b[A-Za-z]+-\d+\b/
+tickets:
+  - {{branch.name | capture(regex=tracker.jira.pattern)}}
+  - {{pr.title | capture(regex=tracker.jira.pattern)}}

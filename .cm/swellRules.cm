@@ -51,6 +51,9 @@ automations:
       - {{ pr.title | includes(term="approve_pull_request") }}
     run:
       - action: approve@v1
+      - action: add-comment@v1
+        args:
+          comment: "PR approved by gitstream"
 
   send_http_request:
     if:

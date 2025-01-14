@@ -17,11 +17,11 @@ automations:
 
   add_comment:
     if:
-      - {{ pr.title | includes(term="add_comment") }}
+      - true
     run:
       - action: add-comment@v1
         args:
-          comment: "Hello {{ pr.author }} from gitstream :tada:"
+          comment: "Hello {{ pr.author }} from gitstream :tada: this is dry run!"
 
   send_slack_message:
     if:

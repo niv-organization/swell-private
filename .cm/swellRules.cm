@@ -8,7 +8,7 @@ manifest:
 automations:
   explain_code_experts:
     if:
-      - {{ pr.title | includes(term="explain_code_experts") }}
+      - true
     run:
       - action: explain-code-experts@v1 
         args:
@@ -21,7 +21,7 @@ automations:
     run:
       - action: add-comment@v1
         args:
-          comment: "Hello {{ pr.author }} from gitstream :tada:"
+          comment: "Hello {{ pr.author }} from gitstream :tada: dry run"
 
   send_slack_message:
     if:

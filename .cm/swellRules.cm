@@ -29,7 +29,7 @@ automations:
     run:
       - action: send-slack-message@v1
         args:
-          message: "Hello world :tada: from {{ pr.author }} in {{ pr.url }}"
+          message: "Hello world :tada: from {{ pr.author }} in {{ pr.url }} another dry run"
           webhook_url: "{{ env.SLACK_PRIVATE_MISHA_CHANNEL_WEBHOOK }}"
 
   merge_pull_request:

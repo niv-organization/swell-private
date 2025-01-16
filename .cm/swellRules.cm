@@ -8,7 +8,7 @@ manifest:
 automations:
   explain_code_experts:
     if:
-      - {{ pr.title | includes(term="explain_code_experts") }}
+      - true
     run:
       - action: explain-code-experts@v1 
         args:
@@ -17,11 +17,11 @@ automations:
 
   add_comment:
     if:
-      - {{ pr.title | includes(term="add_comment") }}
+      - true
     run:
       - action: add-comment@v1
         args:
-          comment: "Hello {{ pr.author }} from gitstream :tada:"
+          comment: "Hello {{ pr.author }} from gitstream :tada: dry run again!@"
 
   send_slack_message:
     if:
@@ -29,7 +29,7 @@ automations:
     run:
       - action: send-slack-message@v1
         args:
-          message: "Hello world :tada: from {{ pr.author }} in {{ pr.url }}"
+          message: "Hello world :tada: from {{ pr.author }} in {{ pr.url }} another change"
           webhook_url: "{{ env.SLACK_PRIVATE_MISHA_CHANNEL_WEBHOOK }}"
 
   merge_pull_request:

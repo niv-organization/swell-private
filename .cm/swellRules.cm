@@ -46,7 +46,7 @@ automations:
     run:
       - action: close@v1
 
-  approve_pull_request:
+    approve_pull_request:
     if:
       - {{ pr.title | includes(term="approve_pull_request") }}
     run:

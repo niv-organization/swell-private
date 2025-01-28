@@ -1,3 +1,3 @@
-console.log("Bye Mishda");
+console.log("Bye ");
 
 console.writeline()

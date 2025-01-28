@@ -6,7 +6,7 @@ manifest:
 
 
 automations:
-  explain_code_experts:
+    explain_code_experts:
     if:
       - {{ pr.title | includes(term="explain_code_experts") }}
     run:

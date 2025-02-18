@@ -1,3 +1,3 @@
-console.log("Bydsae Mdsda");
+console.log("Bydsae ");
 
 console.writeline()

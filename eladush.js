@@ -1,3 +1,3 @@
-console.log("Bydsae ");
+console.log(" ");
 
 console.writeline()

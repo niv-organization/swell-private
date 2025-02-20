@@ -1,4 +1,3 @@
 console.log(" ");
 
-console.writeline()
-dsa
+console.writeline(

@@ -31,7 +31,7 @@ automations:
 
   linearb_ai_review:
     if:
-      - true
+      - false
     run:
       - action: add-comment@v1
         args:

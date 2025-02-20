@@ -1,3 +1,3 @@
-console.log(" dddsasadasdsads");
+console.log(" ddasdsads");
 
 console.writeline()

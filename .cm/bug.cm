@@ -28,3 +28,30 @@ automations:
       - action: add-label@v1
         args:
           label: '🤖 Copilot'
+
+  linearb_ai_review:
+    if:
+      - true
+    run:
+      - action: add-comment@v1
+        args:
+          comment: |
+            ### PR Review by LinearB_AI('Review PR')
+            {{ source | LinearB_AI(prompt=PR_REVIEW_PROMT) }}
+            
+             **Please rate this `LinearB_AI` review:**
+             - [ ] Excellent
+             - [ ] Good Enough
+             - [ ] Needs Improvement
+
+PR_REVIEW_PROMT: |
+  Perform a detailed code review based on the provided code diff. For each modified file:
+  - Analyze the changes in the code and identify any bugs, performance issues, or improvements in readability, maintainability, or adherence to best practices
+  - If unchanged parts of the code are relevant to the modifications, include comments on them to provide a complete context for improvement
+  - Reference specific lines of code from the diff and any relevant unchanged code in your comments
+  - Organize issues by sorting them by the file name and line numbers within each file
+  - For each identified issue:
+    - Use a collapsible section with title that consists of a short description, the file name, and line numbers
+    - Provide actionable suggestions and include a refactored code snippet formatted as a GitHub markdown code block, using a code diff format with + for additions and - for removals
+    - Clearly demonstrate how the improvement can be applied in the relevant section of the code
+  - Focus on actionable, specific feedback about the changes and their immediate context; avoid generic or unrelated comments.

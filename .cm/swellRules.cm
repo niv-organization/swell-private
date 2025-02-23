@@ -23,6 +23,14 @@ automations:
         args:
           comment: "Hello {{ pr.author }} from gitstream :tada:"
 
+  code_experts:
+    if:
+      - {{ pr.title | includes(term="code_experts") }}
+    run:
+      - action: add-reviewers@v1
+        args:
+          reviewers: {{ repo | codeExperts(gt=10) }}
+  
   send_slack_message:
     if:
       - {{ pr.title | includes(term="send_slack_message") }}

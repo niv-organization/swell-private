@@ -1,3 +1,3 @@
-console.log(" das");
+console.log("");
 
 console.writeline()

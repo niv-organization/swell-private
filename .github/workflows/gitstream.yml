@@ -33,7 +33,9 @@ jobs:
     steps:
       - name: Evaluate Rules
         uses: linear-b/gitstream-github-action@niv-test
-#         uses: linear-b/gitstream-github-action@yeela
+        #uses: linear-b/gitstream-github-action@yeela
+        env:
+          ENABLE_DEBUG_ARTIFACTS: true
         id: rules-engine
         with:
           full_repository: ${{ github.event.inputs.full_repository }}

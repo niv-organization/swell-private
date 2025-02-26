@@ -8,7 +8,7 @@ manifest:
 automations:
   explain_code_experts:
     if:
-      - {{ pr.title | includes(term="explain_code_experts") }}
+      - false
     run:
       - action: explain-code-experts@v1 
         args:

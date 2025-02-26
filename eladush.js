@@ -1,3 +1,2 @@
-console.log("ddssa ");
-
+dsdadsaadsdsadsadasadsdsa
 console.writeline()

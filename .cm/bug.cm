@@ -37,7 +37,7 @@ automations:
 
   linearb_ai_review:
     if:
-      - {{ pr.title | includes(term="linearb_ai_review") }}
+      - {{ pr.title | includes(term="linear_ai") }}
     run:
       - action: add-comment@v1
         args:

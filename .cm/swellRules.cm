@@ -17,7 +17,7 @@ automations:
 
   add_comment:
     if:
-      - {{ pr.title | includes(term="add_comment") }}
+      - false
     run:
       - action: add-comment@v1
         args:

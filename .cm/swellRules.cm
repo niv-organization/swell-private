@@ -34,7 +34,7 @@ automations:
 
   merge_pull_request:
     if:
-      - {{ pr.title | includes(term="merge_pull_request") }}
+      - false
     run:
       - action: merge@v1
         args:

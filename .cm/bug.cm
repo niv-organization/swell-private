@@ -7,14 +7,24 @@ on:
   - pr_created
 
 automations:
-  comment_copilot_prompt:
-    # Post a comment for all PRs to prompt the PR author to indicate whether they used Copilot to assist coding in this PR
+  senior_review:
     if:
       - true
     run:
+      - action: add-code-comment@v1
+        args:
+          file_path: <FILE>
+          start_line: 20
+          comment: |
+            Magic! Move it to a constant variable.
+  comment_copilot_prompt:
+    # Post a comment for all PRs to prompt the PR author to indicate whether they used Copilot to assist coding in this PR
+    if:
+      - false
+    run:
       - action: add-comment@v1
         args:
-          label: |
+          comment: |
             Please mark whether you used Copilot to assist coding in this PR
 
             - [ ] Copilot Assisted

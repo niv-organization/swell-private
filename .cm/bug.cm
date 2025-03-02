@@ -14,7 +14,7 @@ automations:
     run:
       - action: add-comment@v1
         args:
-          comment: |
+          label: |
             Please mark whether you used Copilot to assist coding in this PR
 
             - [ ] Copilot Assisted

@@ -13,7 +13,6 @@ automations:
     run:
       - action: add-code-comment@v1
         args:
-          file_path: eladush.js
           comment: |
             Magic! Move it to a constant variable!!.
 

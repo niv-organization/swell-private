@@ -1,3 +1,5 @@
 console.log("ddssa ");
 
-console.writeline()
+console.writeline(גגג)
+
+

@@ -1,3 +1,5 @@
-console.log("ddssa ");
+console.log("ddsa ");
 
-console.writeline()
+console.writeline();
+
+logger.info();

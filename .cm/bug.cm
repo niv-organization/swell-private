@@ -14,7 +14,8 @@ automations:
       - action: add-code-comment@v1
         args:
           file_path: eladush.js
-          end_line: 3
+          start_line: 3
+          end_line: 1
           comment: |
             Magic! Move it to a constant variable!!.
 

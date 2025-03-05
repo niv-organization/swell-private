@@ -6,7 +6,7 @@ manifest:
 automations:
   senior_review:
     if:
-      - true
+      - false
     run:
       - action: add-code-comment@v1
         args:
@@ -28,15 +28,6 @@ automations:
 
             - [ ] Copilot Assisted
             - [ ] Not Copilot Assisted
-  label_copilot_pr:
-    # If the PR author has indicated that they used Copilot to assist coding in this PR, 
-    # apply a label indicating the PR was supported by Copilot
-    if:
-      - {{ pr.comments | filter(attr='commenter', term='gitstream-cm') | filter (attr='content', regex=r/\- \[x\] Copilot Assisted/) | some}}
-    run:
-      - action: add-label@v1
-        args:
-          label: '🤖 Copilot'
 
   pr_review_by_linearb_ai:
     if:

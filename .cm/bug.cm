@@ -13,7 +13,6 @@ automations:
     run:
       - action: add-code-comment@v1
         args:
-          end_line: 1
           file_path: eladush.js
           comment: |
             ```suggestion

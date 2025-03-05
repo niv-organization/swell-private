@@ -15,9 +15,7 @@ automations:
         args:
           file_path: eladush.js
           comment: |
-            ```suggestion
-            import { createReviewCommentToPR, getPRDataByPullNumber } from './pullRequests';
-            ```
+            {{ branch | generatePRDescription(pr, repo, source) }}
            
 
   comment_copilot_prompt:

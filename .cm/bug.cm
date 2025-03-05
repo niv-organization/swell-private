@@ -14,8 +14,8 @@ automations:
       - action: add-code-comment@v1
         args:
           file_path: eladush.js
-          comment: |
-            {{ branch | generatePRDescription(pr, repo, source) }}
+          comment: {{ pr.title }}
+            
            
 
   comment_copilot_prompt:

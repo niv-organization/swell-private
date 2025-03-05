@@ -1,3 +1,3 @@
-console.log("ddssa ");
+console.log("ds ");
 
 console.writeline()

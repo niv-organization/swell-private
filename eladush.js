@@ -12,3 +12,4 @@ console.log("ddsssa ");
 
 
 console.writeline()
+automationName

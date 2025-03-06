@@ -1,3 +1,7 @@
-console.log("ddssa ");
+console.log("ddsssa ");console.log("ddsssa ");
+
+console.log("ddsssa ");console.log("ddsssa ");
+console.log("ddsssa ");
+
 
 console.writeline()

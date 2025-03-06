@@ -21,7 +21,7 @@ automations:
     run:
       - action: add-comment@v1
         args:
-          comment: "Hello {{ pr.author }} from gitstream :tada:"
+          comment: "Hello {{ pr.title }} from gitstream :tada:"
   
   send_slack_message:
     if:

@@ -6,14 +6,21 @@ manifest:
 
 
 automations:
-  explain_code_experts:
+  senior_review:
     if:
-      - {{ pr.title | includes(term="explain_code_experts") }}
+      - false
     run:
-      - action: explain-code-experts@v1 
+      - action: add-code-comment@v1
         args:
-          verbose: true
-          gt: 1
+          start_line: 1
+          file_path: eladush.js
+          comment: {{ pr.title }}
+
+  pr_review_by_linearb_ai:
+    if:
+      - {{ pr.title | includes(term="review") }}
+    run:
+      - action: code-review@v1
 
   add_comment:
     if:
@@ -22,60 +29,3 @@ automations:
       - action: add-comment@v1
         args:
           comment: "Hello {{ pr.title }} from gitstream :tada:"
-  
-  send_slack_message:
-    if:
-      - {{ pr.title | includes(term="send_slack_message") }}
-    run:
-      - action: send-slack-message@v1
-        args:
-          message: "Hello world :tada: from {{ pr.author }} in {{ pr.url }}"
-          webhook_url: "{{ env.SLACK_PRIVATE_MISHA_CHANNEL_WEBHOOK }}"
-
-  merge_pull_request:
-    if:
-      - {{ pr.title | includes(term="merge_pull_request") }}
-    run:
-      - action: merge@v1
-        args:
-          squash_on_merge: true
-
-  close_pull_request:
-    if:
-      - {{ pr.title | includes(term="close_pull_request") }}
-    run:
-      - action: close@v1
-
-  approve_pull_request:
-    if:
-      - {{ pr.title | includes(term="approve_pull_request") }}
-    run:
-      - action: approve@v1
-      - action: add-comment@v1
-        args:
-          comment: "PR approved by gitstream"
-
-  send_http_request:
-    if:
-      - {{ pr.title | includes(term="send_http_request") }}
-    run:
-      - action: send-http-request@v1
-        args:
-          url: https://webhook.site/baa59fda-8bf6-4ab3-bc80-28ad2855cd09
-          method: "POST"
-          body: '{"type": "customMetric", "repo_name": "{{ repo.name }}", "repo_owner": "{{ repo.owner }}", "pr_approval": "{{ pr.approvals | join(",") }}", "provider": "bitbucket", "pr_owner": "{{ pr.author }}", "pr_url": "{{ pr.url }}" }'
-
-  label_missing_jira_info:
-    if:
-      - {{ pr.title | includes(term="missing_jira") }}
-      - {{ not (has.jira_ticket_in_title or has.jira_ticket_in_desc) }}
-    run:
-      - action: add-comment@v1
-        args:
-          comment: |
-            This PR is missing a Jira ticket reference in the title or description.
-            Please add a Jira ticket reference to the title or description of this PR.
-
-has:
-  jira_ticket_in_title: {{ pr.title | includes(regex=r/\b[A-Za-z]+-\d+\b/) }}
-  jira_ticket_in_desc: {{ pr.description | includes(regex=r/atlassian.net\/browse\/\w{1,}-\d{3,4}/) }}

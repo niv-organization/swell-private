@@ -1,3 +1,4 @@
-console.log("ddssa ");
-
-console.writeline()
+console.log("ddssadsdas ");
+dasdsa
+console.writeline(dasdsa)
+dasdasd

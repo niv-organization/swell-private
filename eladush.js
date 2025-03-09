@@ -1,3 +1,3 @@
-console.log("IMPORTANT");
+console.log("VERY IMPORTANT");
 
 console.writeline()

@@ -1,3 +1,3 @@
-console.log("ddssa ");
+console.log("שד ");
 
 console.writeline()

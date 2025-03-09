@@ -1,3 +1,3 @@
-console.log(".            s     s");//.//d/./.kl
+console.log(".         d   s     s");//.//d/./.kl
 
-console.writeline()
+console.writeline()d

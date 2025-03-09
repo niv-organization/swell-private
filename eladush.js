@@ -1,3 +1,3 @@
-console.log("dsdasdsadsasadasdsadsadas 
+console.log("s 
 
 console.writeline()

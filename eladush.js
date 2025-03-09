@@ -1,3 +1,3 @@
-console.log("שד ");
+console.log(".            ");
 
 console.writeline()

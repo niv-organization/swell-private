@@ -13,7 +13,7 @@ automations:
       - action: add-code-comment@v1
         args:
           start_line: 1
-          end_line: 3
+          end_line: 1
           file_path: eladush.js
           comment: {{ pr.title }}
 

@@ -1,3 +1,3 @@
-console.log("trim me ");
+console.log("trim me again ");
 
 console.writeline()

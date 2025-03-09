@@ -1,5 +1,5 @@
 console.log(".        eqw d   s     s");//.//d/./.kl
-
+       
 console.writeline()d
 eq
 console.log(".        eqw d   s     s");//.//d/./.kl

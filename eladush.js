@@ -1,3 +1,4 @@
-console.log(".         d   s     s");//.//d/./.kl
+console.log(".        eqw d   s     s");//.//d/./.kl
 
 console.writeline()d
+eq

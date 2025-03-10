@@ -14,7 +14,7 @@ automations:
         args:
           start_line: 1
           file_path: eladush.js
-          comment: " im sick of Elad Kochavi"
+          comment: " Leave me alone Elad Kochavi"
            
   pr_review_by_linearb_ai:
     if:

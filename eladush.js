@@ -1,3 +1,3 @@
-console.log("ddssa ");
+console.log("Code comments are fun!");
 
 console.writeline()

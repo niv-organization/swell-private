@@ -23,7 +23,7 @@ eq
 
 console.log(".        eqw d   s     s");//.//d/./.kl
        
-console.writeline()d
+console.writeline
 eq
 console.log(".        eqw d   s     s");//.//d/./=
 

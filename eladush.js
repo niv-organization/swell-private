@@ -52,4 +52,4 @@ function updateProfile(username, name = null, email = null, age = null) {
 console.log(registerUser("johnDoe", "securePass123"));
 console.log(loginUser("johnDoe", "securePass123"));
 console.log(updateProfile("johnDoe", "John Doe", "john.doe@example.com", 30));
-console.log(usersDB); // To see stored users
+console.log(usersDB); // To see stored usersnnames

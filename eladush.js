@@ -1,7 +1,7 @@
 const usersDB = {}; // Object to store user data
 
 function hashPassword(password) {
-    // Simple hash function (for demo purposes only, NOT secure)
+    // Simple hash function (for demo purposes only, NOT secure!)
     return password.split("").reverse().join("");
 }
 

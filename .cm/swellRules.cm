@@ -29,3 +29,15 @@ automations:
       - action: add-comment@v1
         args:
           comment: "Hello {{ pr.title }} from gitstream :tada:"
+
+  estimated_time_to_review:
+    if:
+      - true
+    run:
+      - action: add-label@v1
+        args:
+          label: "{{ calc.etr }} min review"
+          color: {{ colors.red if (calc.etr >= 20) else ( colors.yellow if (calc.etr >= 5) else colors.green ) }}
+
+calc:
+  etr: {{ branch | estimatedReviewTime }}

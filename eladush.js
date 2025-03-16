@@ -1,4 +1,4 @@
-// this is a file to test code review by AaI!!!.
+// this is a file to test code review by AI!!!.
 const usersDB = {}; // Object to store user data
 
 function hashPassword(password) {

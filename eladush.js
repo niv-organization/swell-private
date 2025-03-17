@@ -1,5 +1,5 @@
 // this is a file to test code review !?
-const usersDB = {}; // Object tstore user d
+const usersDB = {}; // Object tstore user
 
 function hashPassword(password) {
     // Simple hash function (for demo purposes only, NOT secure!)

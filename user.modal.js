@@ -1,6 +1,5 @@
-// this is a file to test code review !?!?!
+// This file is a dummy code for review AI!@!@
 const usersDB = {}; // Object tstore user
-
 function hashPassword(password) {
     // Simple hash function (for demo purposes only, NOT secure!)
     return password.split("").reverse().join("");

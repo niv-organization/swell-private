@@ -8,11 +8,12 @@ manifest:
 automations:
   senior_review:
     if:
-      - false
+      - true
     run:
       - action: add-code-comment@v1
         args:
           start_line: 1
+          end_line: 3
           file_path: eladush.js
           comment: "Leave me alone :rocket: :tada:"
            

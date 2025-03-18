@@ -33,7 +33,7 @@ automations:
 
   estimated_time_to_review:
     if:
-      - true
+      - false
     run:
       - action: add-label@v1
         args:

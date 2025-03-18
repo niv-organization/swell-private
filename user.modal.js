@@ -1,4 +1,4 @@
-// This file is a dummy code for review AI!!!
+// This file is a dummy code for review AI!!s!
 const usersDB = {}; // Object tstore user
 function hashPassword(password) {
     // Simple hash function (for demo purposes only, NOT secure!)

@@ -1,4 +1,6 @@
-const usersDB = {}; // Object tstore user
+// Some changes 
+const usersDB = {};
+// Some changes 
 
 function hashPassword(password) {
     // Simple hash function (for demo purposes only, NOT secure!)

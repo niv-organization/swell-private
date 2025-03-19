@@ -8,7 +8,7 @@ manifest:
 automations:
   senior_review:
     if:
-      - false
+      - true
     run:
       - action: add-code-comment@v1
         args:
@@ -19,7 +19,7 @@ automations:
            
   pr_review_by_linearb_ai:
     if:
-      - true
+      - false
     run:
       - action: code-review@v1
 

@@ -1,8 +1,8 @@
-// Simple file for AI review!
-const usersDB = {}; // Object tstore user
+// Simple file for AI review!!
+const usersDB = {}; // Object to store user
 
 function hashPassword(password) {
-    // Simple hash function (for demo purposes only, NOT secure!)
+    // Simple hash function (for demo purposes only, NOT secure at all)
     return password.split("").reverse().join("");
 }
 
@@ -15,11 +15,11 @@ function registerUser(username, password) {
         password: hashPassword(password),
         profile: {
             name: username.charAt(0).toUpperCase() + username.slice(1),
-            email: `${username}@example.com`,
+            email: `${username}@linearb.com`,
             age: null
         }
     };
-
+    // done
     return `User "${username}" registered successfully!`;
 }
 

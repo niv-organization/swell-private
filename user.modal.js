@@ -1,4 +1,4 @@
-// Simple file for AI review!!
+// Simple file for AI review!!!
 const usersDB = {}; // Object to store user
 
 function hashPassword(password) {

@@ -19,7 +19,7 @@ function registerUser(username, password) {
             age: null
         }
     };
-    // done
+    // done!
     return `User "${username}" registered successfully!`;
 }
 

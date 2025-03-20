@@ -29,7 +29,7 @@ function loginUser(username, password) {
     }
 
     if (usersDB[username].password === hashPassword(password)) {
-        return `Welcome, ${username}!`;
+        return `Welcome, ${username}`;
     } else {
         return `Error: Incorrect password!`;
     }

@@ -25,7 +25,7 @@ function registerUser(username, password) {
 
 function loginUser(username, password) {
     if (!usersDB[username]) {
-        return `Error: User "${username}" not found!`;
+        return `Error: User with username "${username}" not found!`;
     }
 
     if (usersDB[username].password === hashPassword(password)) {

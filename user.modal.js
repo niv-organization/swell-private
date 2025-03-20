@@ -10,7 +10,7 @@ function registerUser(username, password) {
     if (usersDB[username]) {
         return `Error: Username "${username}" already exists!`;
     }
-
+    // tbd
     usersDB[username] = {
         password: hashPassword(password),
         profile: {

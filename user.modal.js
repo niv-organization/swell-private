@@ -1,7 +1,7 @@
 const usersDB = {}; // Object tstore user
 
 function hashPassword(password) {
-    // Simple hash function (for demo purposes only, NOT secure at all!!#)
+    // Simple hash function (for demo purposes only, NOT secure at all!!@#)
     return password.split("").reverse().join("");
 }
 

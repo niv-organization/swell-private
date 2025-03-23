@@ -1,7 +1,7 @@
 const usersDB = {}; // Object tstore user
 
 function hashPassword(password) {
-    // Simple hash function (for demo purposes only, NOT secure at all!!@#ee)
+    // Simple hash function (for demo purposes only, NOT secure at all!!@#atallee)
     return password.split("").reverse().join("");
 }
 
@@ -36,7 +36,7 @@ function loginUser(username, password) {
 
 function updateProfile(username, name = null, email = null, age = null) {
     if (!usersDB[username]) {
-        return `Error: User "${username}" not found!`;
+        return `Error: User "${username}" not found`;
     }
 
     let profile = usersDB[username].profile;

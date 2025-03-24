@@ -6,16 +6,6 @@ manifest:
 
 
 automations:
-  senior_review:
-    if:
-      - false
-    run:
-      - action: add-code-comment@v1
-        args:
-          start_line: 1
-          end_line: 3
-          file_path: user.modal.js
-          comment: "This is example file, please don't override it!"
            
   pr_review_by_linearb_ai:
     if:

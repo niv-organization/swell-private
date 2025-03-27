@@ -1,34 +1,21 @@
 # -*- mode: yaml -*-
-# This example configuration for provides basic automations to get started with gitStream.
-# View the gitStream quickstart for more examples: https://docs.gitstream.cm/examples/
+
 manifest:
   version: 1.0
 
-
 automations:
-           
-  pr_review_by_linearb_ai:
+  linearb_ai_review:
     if:
       - true
     run:
       - action: code-review@v1
-
-  add_comment:
-    if:
-      - {{ pr.title | includes(term="add_comment") }}
-    run:
-      - action: add-comment@v1
         args:
-          comment: "Hello {{ pr.title }} from gitstream :tada:"
+          approve_on_LGTM: true
 
-  estimated_time_to_review:
+  linearb_ai_description:
     if:
-      - false
+      - true
     run:
-      - action: add-label@v1
+      - action: describe-changes@v1
         args:
-          label: "{{ calc.etr }} min review"
-          color: {{ colors.red if (calc.etr >= 20) else ( colors.yellow if (calc.etr >= 5) else colors.green ) }}
-
-calc:
-  etr: {{ branch | estimatedReviewTime }}
+          concat_mode: append

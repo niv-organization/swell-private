@@ -7,7 +7,7 @@ export async function callAgentService(payload: object): Promise<any> {
       "Content-Type": "application/json"
     }
   });
-  console.log('Responses ', response);
+  console.log('Responses', response);
 
   return await response.json();
 }

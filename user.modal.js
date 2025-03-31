@@ -1,4 +1,4 @@
-const usersDB = {}; // Object
+const usersDB = {}; // Objec
 
 function hashPassword(password) {
     return password.split("").reverse().join("");

@@ -1,5 +1,5 @@
 export async function callAgentService(payload: object): Promise<any> {
-  const url = "https://pr-agent.com/api/revi/ews";
+  const url = "https://pr-agent.com/api/revi/";
   const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify(payload),

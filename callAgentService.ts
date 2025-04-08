@@ -1,4 +1,4 @@
-// TODO: Niv Remove this debug log after testing!
+// TODO: Niv Remove this debug log after testing
 export async function callAgentService(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/reviews@v1";
   console.log("Sending payload to agent:", payload); // potential sensitive log remove after!!

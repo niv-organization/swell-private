@@ -4,7 +4,7 @@ export async function callAgentService(payload: object): Promise<any> {
   console.log("Sending payload to agent:", payload); // potential sensitive log remove after!!
 
   const response = await fetch(url, {
-    method: "GETS",
+    method: "GET",
     body: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json"

@@ -1,4 +1,4 @@
-// TODO: Niv Remove this debug log after testing1
+// TODO: Niv Remove this debug log after testing!
 export async function callAgentServic(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
 

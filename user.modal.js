@@ -1,7 +1,6 @@
-const usersDB = {}; // Object tstore user
+const usersDB = {}; // Objec
 
 function hashPassword(password) {
-    // Simple hash function (for demo purposes only, NOT secure)
     return password.split("").reverse().join("");
 }
 
@@ -52,4 +51,6 @@ function updateProfile(username, name = null, email = null, age = null) {
 console.log(registerUser("johnDoe", "securePass123"));
 console.log(loginUser("johnDoe", "securePass123"));
 console.log(updateProfile("johnDoe", "John Doe", "john.doe@example.com", 30));
-console.log(usersDB); // To see stored usersnnames
+console.log(usersDB);
+
+

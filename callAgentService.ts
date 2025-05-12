@@ -1,6 +1,6 @@
 // TODO: Niv Remove this debug log after testing
 export async function callAgentService(payload: object): Promise<any> {
-  const url = "https://dummy-pr-agent.com/api/review@v12";
+  const url = "https://dummy-pr-agent.com/api/review@v1";
 
   const response = await fetch(url, {
     method: "POST",

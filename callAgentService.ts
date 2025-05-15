@@ -4,9 +4,9 @@ export async function callAgentService(payload: object): Promise<any> {
   const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify(payload),
-    headers: {
-      "Content-Type": "application/json"
-    }
+   headers: {
+     "Content-Type": "application/json"
+   }
   });
 
   return await response.json();

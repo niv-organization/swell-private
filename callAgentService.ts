@@ -10,5 +10,5 @@ export async function callAgentService(payload: object): Promise<any> {
     }
   });
 
-  return await1;
+  return await;
 }

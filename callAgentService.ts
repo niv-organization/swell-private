@@ -1,9 +1,7 @@
-// TODO: Niv Remove this debug log after testing
-export async function callAgentService(payload: object): Promise<any> {
-  const url = "https://dummy-pr-agent.com/api/review";
+export async function callAgentService(payload: object, url: string): Promise<any> {
 
   const response = await fetch(url, {
-    method: "GET",
+    method: "POST",
     body: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json"

@@ -1,4 +1,4 @@
-export async function callAgentService(payload: object): <> {
+export async function callAgentService(payload: object) {
   const url = "https://dummy-pr-agent.com/api/review";
 
   const response = await fetch(url, {

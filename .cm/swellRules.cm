@@ -6,7 +6,7 @@ manifest:
 automations:
   linearb_ai_review:
     if:
-      - true
+      - false
     run:
       - action: code-review@v1
         args:

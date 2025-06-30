@@ -19,3 +19,30 @@ automations:
       - action: describe-changes@v1
         args:
           concat_mode: append
+
+  comment_ai_assistance_prompt:
+      if:
+        - {{ IS_NOT_A_BOT }}
+        - {{ pr.labels | match(regex=r/🤖 ai-*/) | nope }}
+        - {{ pr.comments | filter(attr='commenter', term='gitstream-cm') | filter(attr='content', regex=r/Please mark which AI tools you used/) | nope }}
+        - {{ not (files | includes(term='ai_log.jsonl')) }}
+      run:
+        - action: add-comment@v1
+          args:
+            comment: |
+              Please mark which AI tools you used for this PR by checking the appropriate boxes:
+  
+              - [ ] GitHub Copilot
+              - [ ] Cursor
+              - [ ] ChatGPT
+              - [ ] Tabnine
+              - [ ] JetBrains AI Assistant
+              - [ ] VSCode IntelliCode
+              - [ ] Claude
+              - [ ] Gemini
+              - [ ] Other AI tool
+              - [ ] No AI tools were used
+  
+              Tip: If you want to avoid this comment in the future, you can add a label of the format `🤖 ai-*` when creating your PR.
+
+IS_NOT_A_BOT: {{ pr.author | match(list=['github-actions', 'dependabot', '[bot]']) | nope }}

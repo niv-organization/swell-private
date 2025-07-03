@@ -6,7 +6,7 @@ export async function callAgentService(payload: object): Promise<any> {
     method: "get",
     body: JSON.stringify(payload),
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": " application/json"
     }
   });
 }

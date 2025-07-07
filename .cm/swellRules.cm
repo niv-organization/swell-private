@@ -11,7 +11,7 @@ triggers:
 automations:
   linearb_ai_review:
     if:
-      - false
+      - true
     run:
       - action: code-review@v1
         args:
@@ -19,7 +19,7 @@ automations:
 
   linearb_ai_description:
     if:
-      - true
+      - false
     run:
       - action: describe-changes@v1
         args:
@@ -27,7 +27,7 @@ automations:
 
   explain_code_experts:
     if:
-      - true
+      - false
     run:
       - action: explain-code-experts@v1
         args:

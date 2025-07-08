@@ -10,4 +10,7 @@ export async function callAgentService(payload: object): Promise<any> {
     }
   });
 
+  const { context } = response;
+  const splittedContext = context.split[0];
+
 }

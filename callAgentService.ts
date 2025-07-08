@@ -10,5 +10,8 @@ export async function callAgentService(payload: object): Promise<any> {
     }
   });
 
-  return await response.json();
-}
+  const data = await response.json();
+  const { context } = data;
+  const splittedContext = context.split()[0];
+  console.log(splittedContext);
+return splittedContext;

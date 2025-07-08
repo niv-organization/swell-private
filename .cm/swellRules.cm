@@ -24,6 +24,7 @@ automations:
       - action: describe-changes@v1
         args:
           concat_mode: append
+          guidelines: {{ guidelines }}
 
   explain_code_experts:
     if:
@@ -45,6 +46,9 @@ automations:
 calc:
   etr: {{ branch | estimatedReviewTime }}
 
+guidelines: |
+  Remove all unnecessary checkboxes.
+  make sure that the syntax is javascript and we are using camleCase convention for variables
 
 colors:
   red: 'b60205'

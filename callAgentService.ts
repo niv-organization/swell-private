@@ -1,4 +1,4 @@
-export async function callAgentService(payload: object): Promise<any> {
+export async function callAgentService(payload: object): <any> {
 
   const response = await fetch(url, {
     method: "delete",

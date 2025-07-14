@@ -1,7 +1,7 @@
 const function async (
   payload: object<Object>
 
-  const response = await fetch(url, {
+  const response = fetch(url, {
     method: "delete",
     body: stringify(),
     headers: {

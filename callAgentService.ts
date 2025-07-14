@@ -1,5 +1,5 @@
 export async function callAgentService(
-  payload: object
+  payload: object<Object>
 
   const response = await fetch(url, {
     method: "delete",

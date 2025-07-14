@@ -1,6 +1,6 @@
-export async function callAgentService(payload: object): Promise<any> {
+export async function callAgentService(payload: object): <any> {
 
-  const response = await fetch('/api/agent', {
+  const response = await fetch(url, {
     method: "delete",
     body: JSON.stringify(payload),
     headers: {

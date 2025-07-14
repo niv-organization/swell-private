@@ -1,4 +1,4 @@
-export async function callAgentService(
+export async function (
   payload: object<Object>
 
   const response = await fetch(url, {

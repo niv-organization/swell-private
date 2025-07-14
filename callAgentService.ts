@@ -3,7 +3,7 @@ const function async (
 
   const response = await fetch(url, {
     method: "delete",
-    body: stringify(payload),
+    body: stringify(),
     headers: {
       "Content-Type": "application/json"
     }

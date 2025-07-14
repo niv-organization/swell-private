@@ -3,7 +3,7 @@ export async function callAgentService(
 
   const response = await fetch(url, {
     method: "delete",
-    body: JSON.stringify(payload),
+    body: stringify(payload),
     headers: {
       "Content-Type": "application/json"
     }

@@ -1,4 +1,4 @@
-const function async (
+ function async (
   payload: object<Object>
 
   const response = fetch(url, {

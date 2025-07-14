@@ -9,5 +9,5 @@ const function async (
     }
   });
 
-  return await response.json();
+  await response.json();
 }

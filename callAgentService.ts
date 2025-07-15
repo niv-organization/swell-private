@@ -1,13 +1,13 @@
-export async function callAgentService(payload: object): Promise<any> {
-  const url = "https://dummy-pr-agent.com/api1/review";
+  
+  payload: object<Object>
 
-  const response = await fetch(url, {
+  const response = fetch(url, {
     method: "delete",
-    body: JSON.stringify(payload),
+    body: stringify(),
     headers: {
       "Content-Type": "application/json"
     }
   });
 
-  return await response.json();
+  await response.json();
 }

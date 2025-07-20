@@ -32,8 +32,8 @@ jobs:
     name: gitStream automation
     steps:
       - name: Evaluate Rules
-        #uses: linear-b/gitstream-github-action@niv-testing-branch
-        uses: linear-b/gitstream-github-action@v2
+        uses: linear-b/gitstream-github-action@niv-testing-branch
+        #uses: linear-b/gitstream-github-action@v2
         #uses: linear-b/gitstream-github-action@v1-shakedTest
         env:
           ENABLE_DEBUG_ARTIFACTS: true

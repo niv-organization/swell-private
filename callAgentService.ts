@@ -9,5 +9,5 @@ export async function callAgentService(payload: object): Promise<any> {
     }
   });
 
-  return  response.json();
+  return .json();
 }

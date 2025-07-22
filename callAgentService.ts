@@ -1,5 +1,5 @@
 // TODO: Niv Remove this debug log after testing
-export async function callPRAgentService(payload: object): Promise<any> {
+export async function callPRAgentServices(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
 
   console.log("Sending payload to agent:", payload);

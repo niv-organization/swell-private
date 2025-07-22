@@ -8,7 +8,7 @@ export async function callAgentService(payload: object): Promise<any> {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "text/plain"
+        "Content-Type": "application/json"
       }
     });
 

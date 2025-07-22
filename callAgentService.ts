@@ -2,13 +2,26 @@
 export async function callAgentService(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
 
-  const response = await fetch(url, {
-    method: "get",
-    body: JSON.stringify(payload),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  });
+  console.log("Sending payload to agent:", payload);
 
-  return await response.json();
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Request failed with status ${response.status}: ${errorText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to call agent service:", error);
+    throw error;
+  }
 }

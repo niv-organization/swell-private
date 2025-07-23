@@ -2,7 +2,7 @@
 export async function callAgentService(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
 
-  console.debug("Sending payload to agent:", payload);
+  console.debug("Sending payload to pr agent:", payload);
 
   try {
     const response = await fetch(url, {
@@ -18,10 +18,9 @@ export async function callAgentService(payload: object): Promise<any> {
       throw new Error(`Request failed with status ${response.status}: ${errorText}`);
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
-    console.error("Failed to call agent service:", error);
+    console.error("Failed to call pr agent service:", error);
     throw error;
   }
 }

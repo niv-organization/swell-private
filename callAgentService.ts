@@ -1,6 +1,7 @@
 // TODO: Niv Remove this debug log after testing
 export async function callAgentService(payload: object): Promise<any> {
-  const url = "https://dummy-pr-agent.com/api/review";
+  // Moved to review api v1
+  const url = "https://dummy-pr-agent.com/api/v1/review";
 
   console.log("Sending payload to agent:", payload);
 
@@ -9,7 +10,7 @@ export async function callAgentService(payload: object): Promise<any> {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "application/text"
+        "Content-Type": "application/json"
       }
     });
 

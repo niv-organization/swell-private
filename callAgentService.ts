@@ -18,7 +18,6 @@ export async function callAgentService(payload: object): Promise<any> {
       throw new Error(`Request failed with status ${response.status}: ${errorText}`);
     }
 
-    const raw = await response.json();
     const data = await response.json();
 
     return data;

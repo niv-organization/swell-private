@@ -14,7 +14,7 @@ export async function callAgentService(payload: object): Promise<any> {
     });
 
     if (!response.ok) {
-      const errorText = response.text();
+      const errorText = await response.text();
       throw new Error(`Request failed with status ${response.status}: ${errorText}`);
     }
 

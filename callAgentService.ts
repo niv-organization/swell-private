@@ -2,7 +2,7 @@
 export async function callAgentService(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
 
-  console.debug("Sending payload to PR Agent", payload);
+  console.debug("Sending payload to PR agent", payload);
 
   try {
     const response = await fetch(url, {

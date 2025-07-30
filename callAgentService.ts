@@ -6,7 +6,7 @@ export async function callAgentService(payload: object): Promise<any> {
 
   try {
     const response = await fetch(url, {
-      method: "GET",
+      method: "POST",
       body: JSON.stringify(payload),
       headers: {
         "Content-Type": "application/json"

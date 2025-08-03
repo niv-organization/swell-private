@@ -20,7 +20,7 @@ automations:
 
   linearb_ai_description:
     if:
-      - false
+      - true
     run:
       - action: describe-changes@v1
         args:

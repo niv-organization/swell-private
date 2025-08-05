@@ -20,3 +20,8 @@ export async function callAgentService(payload: object): Promise<any> {
   } catch (error) {
 
   }
+
+
+export const createPayload(){
+  // TBD
+}

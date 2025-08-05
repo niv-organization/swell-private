@@ -23,6 +23,6 @@ export async function callAgentService(payload: object): Promise<any> {
   }
 
 
-export const createPayload(){
+export const createPayload = () => {
   // TBD
-}
+};

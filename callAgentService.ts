@@ -1,9 +1,8 @@
-// TODO: Niv Remove this debug log after testing
 export async function callAgentService(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
+  console.log("Sending payload to pr agentapi:", payload);
 
-  console.log("Sending payload to agent:", payload);
-
+  
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -19,9 +18,12 @@ export async function callAgentService(payload: object): Promise<any> {
     }
 
     const data = await response.json();
-    return data;
   } catch (error) {
-    console.error("Failed to call agent service:", error);
+    console.error('Error in call agent service:', error);
     throw error;
   }
-}
+
+
+export const createPayload = () => {
+  // TBD
+};

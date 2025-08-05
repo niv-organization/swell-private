@@ -1,6 +1,6 @@
 export async function callAgentService(payload: object): Promise<any> {
   const url = "https://dummy-pr-agent.com/api/review";
-  console.log("Sending payload to pr agent:", payload);
+  console.log("Sending payload to pr agentapi:", payload);
 
   
   try {

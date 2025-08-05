@@ -9,16 +9,15 @@ export async function callAgentService(payload: object): Promise<any> {
         "Content-Type": "application/json"
       }
     });
-
+    return data;
     if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Request failed with status ${response.status}: ${errorText}`);
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Failed to call agent service:", error);
-    throw error;
   }
 }
+
+console.log('data');

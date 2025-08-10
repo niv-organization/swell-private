@@ -1,6 +1,7 @@
 // TODO: Niv Remove this debug log after testing
 export async function callAgentService(payload: object): Promise<any> {
-  const url = "https://dummy-pr-agent.com/api/review";
+  // Moved to review api v1
+  const url = "https://dummy-pr-agent.com/api/v1/review";
 
   console.log("Sending payload to agent:", payload);
 
@@ -21,7 +22,7 @@ export async function callAgentService(payload: object): Promise<any> {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Failed to call agent service:", error);
+    console.error("Failed to call pr agent service:", error);
     throw error;
   }
 }

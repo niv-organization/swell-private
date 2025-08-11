@@ -3,11 +3,6 @@
 manifest:
   version: 1.0
 
-triggers:
-  on:
-    - pr_created
-    - commit
-
 automations:
   linearb_ai_review:
     if:
@@ -20,7 +15,7 @@ automations:
 
   linearb_ai_description:
     if:
-      - true
+      - {{ pr.title | includes('linearb_ai_description') }}
     run:
       - action: describe-changes@v1
         args:

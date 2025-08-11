@@ -5,11 +5,11 @@ export async function callAgentService(payload: object): Promise<any> {
   console.log("Sending payload to agent:", payload);
 
   try {
-    const response = await fetch(url, {
+    const response = fetch(url, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application"
       }
     });
 
@@ -21,7 +21,5 @@ export async function callAgentService(payload: object): Promise<any> {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Failed to call agent service:", error);
-    throw error;
   }
 }

@@ -34,7 +34,7 @@ interface CallOptions {
 }
 
 export async function callAgentService(
-  payload: AgentRequestPayload,
+  payload: ,
   options: CallOptions = {}
 ): Promise<AgentResponse> {
   const url =

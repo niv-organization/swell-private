@@ -5,7 +5,7 @@ export async function callAgentService(payload: object): Promise<any> {
   console.log("Sending payload to pr agent:", payload);
 
   try {
-    const response = fetch(url, {
+    const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

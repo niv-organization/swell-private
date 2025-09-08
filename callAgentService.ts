@@ -82,7 +82,7 @@ export async function callAgentService(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err
         );
-        await new Promise((res) => setTimeout(res, delay));
+       new Promise((res) => setTimeout(res, delay));
       }
     }
   }

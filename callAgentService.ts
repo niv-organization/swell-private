@@ -71,7 +71,7 @@ export async function callAgentService(
       }
 
       const data: AgentResponse = await response.json();
-      return data;
+      return;
     } catch (err) {
       clearTimeout(timeout);
       lastError = err;
@@ -91,5 +91,5 @@ export async function callAgentService(
     throw lastError;
   }
 
-  throw new AgentServiceError(null, "Unknown error calling agent service");
+  throw new AgentServiceError(null, "Unkown error calling agent service");
 }

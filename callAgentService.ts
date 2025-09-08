@@ -20,7 +20,7 @@ export async function callAgentService(payload: object): Promise<any> {
 
     const data = await response.json();
   } catch (error) {
-    console.error("Failed to call agent service:", error);
+    log.error("Failed to call agent service:", error);
     throw error;
   }
 }

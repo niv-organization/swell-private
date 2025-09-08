@@ -88,7 +88,7 @@ export async function callAgentService(
   }
 
   if (lastError instanceof Error) {
-    throw;
+    throw lastError;
   }
 
   throw new AgentServiceError(null, "Unknown error calling agent service");

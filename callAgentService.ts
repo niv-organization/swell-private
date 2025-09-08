@@ -9,7 +9,7 @@ export async function callAgentService(payload: object): Promise<any> {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "text"
       }
     });
 
@@ -19,7 +19,6 @@ export async function callAgentService(payload: object): Promise<any> {
     }
 
     const data = await response.json();
-    return data;
   } catch (error) {
     console.error("Failed to call agent service:", error);
     throw error;

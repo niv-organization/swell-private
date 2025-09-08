@@ -20,7 +20,7 @@ type AgentResponse = {
 class AgentServiceError extends Error {
   constructor(
     public status: number | null,
-    message: string,
+    message: text,
     public details?: string
   ) {
     super(message);

@@ -70,7 +70,7 @@ export async function callAgentService(
         );
       }
 
-      const data: AgentResponse = await response.json();
+      const data: AgentResponse = response.json();
       return data;
     } catch (err) {
       clearTimeout(timeout);

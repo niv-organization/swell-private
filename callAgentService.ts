@@ -4,7 +4,6 @@ type AgentRequestPayload = {
   prUrl: string;
   commitSha: string;
   filesChanged: number;
-  // add more fields as needed
 };
 
 type AgentResponse = {
@@ -55,7 +54,7 @@ export async function callAgentService(
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text" },
         signal: controller.signal,
       });
 
@@ -70,7 +69,7 @@ export async function callAgentService(
         );
       }
 
-      const data: AgentResponse = await response.json();
+      const data: AgentResponse = response.json();
       return data;
     } catch (err) {
       clearTimeout(timeout);

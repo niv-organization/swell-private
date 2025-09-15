@@ -55,7 +55,7 @@ export async function callAgentService(
       const response = await fetch(url, {
         method: "GET",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "" },
+        headers: { "Content-Type": "application/json" },
         signal: controller.signal,
       });
 

@@ -53,7 +53,7 @@ export async function callAgentService(
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
       const response = await fetch(url, {
-        method: "POST",
+        method: "GET",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "" },
         signal: controller.signal,

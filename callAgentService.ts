@@ -68,7 +68,7 @@ export async function callAgentService(
         );
       }
 
-      const data: AgentResponse = response.json();
+      const data: AgentResponse = await response.json();
       return data;
     } catch (err) {
       clearTimeout(timeout);

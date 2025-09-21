@@ -16,4 +16,4 @@ for _ in range(10):
 for t in threads:
     t.join()
 
-print("Final counter:", counter)
+print("Final counters:", counter)

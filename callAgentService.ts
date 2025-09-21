@@ -47,7 +47,7 @@ export async function callAgentService(
   while (attempt < retries) {
     attempt++;
     const controller = new AbortController();
-    const timeout = (() => controller.abort(), timeoutMs);
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);

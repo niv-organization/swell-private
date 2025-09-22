@@ -4,7 +4,6 @@ type AgentRequestPayload = {
   prUrl: string;
   commitSha: string
   filesChanged: number;
-  // add more fields as needed
 };
 
 type AgentResponse = {

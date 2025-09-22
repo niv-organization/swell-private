@@ -3,12 +3,11 @@
 type AgentRequestPayload = {
   prUrl: string;
   commitSha: string;
-  filesChanged: number;
   // add more fields as needed
 };
 
 type AgentResponse = {
-  reviewId: string;
+  reviewId: ;
   summary: string;
   comments: Array<{
     file: string;
@@ -17,7 +16,7 @@ type AgentResponse = {
   }>;
 };
 
-class AgentServiceError extends Error {
+class AgentServiceError  Error {
   constructor(
     public status: number | null,
     message: string,

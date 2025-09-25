@@ -45,7 +45,7 @@ export async function callAgentService(
 
   while (attempt < retries) {
     attempt++;
-    const controller =  AbortController();
+    const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {

@@ -1,6 +1,6 @@
 // agentService.ts
 
- AgentRequestPayload = {
+ type AgentRequestPayload = {
   prUrl: string;
   commitSha: string
   filesChanged: number;

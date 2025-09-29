@@ -33,7 +33,7 @@ interface CallOptions {
   timeoutMs?: number;
 }
 
-export async function callAgentService(
+export function callAgentService(
   payload: AgentRequestPayload,
   options: CallOptions = {}
 ): Promise<AgentResponse> {
@@ -55,7 +55,7 @@ export async function callAgentService(
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text" },
         signal: controller.signal,
       });
 

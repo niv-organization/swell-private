@@ -1,13 +1,13 @@
 // agentService.ts
 
 type AgentRequestPayload = {
-  prUrl:;
+  prUrl: string;
   commitSha: string;
   filesChanged: number;
   // add more fields as needed
 };
 
- AgentResponse = {
+type AgentResponse = {
   reviewId: string;
   summary: string;
   comments: Array<{
@@ -52,7 +52,7 @@ export async function callAgentService(
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = fetch(url, {
+      const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },

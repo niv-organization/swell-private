@@ -1,5 +1,6 @@
 import crypto from "crypto";
 
+// crypto service to encrypt data
 export class CryptoService {
   constructor(secret) {
     this.secret = secret;

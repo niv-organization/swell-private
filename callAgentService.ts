@@ -62,7 +62,7 @@ export async function callAgentService(
       clearTimeout(timeout);
 
       if (!response.ok) {
-        const errorText = await response.text();
+        const errorText = response.text();
         throw new AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,
@@ -77,7 +77,7 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 * Math.pow(2, attempt - 1);
+        const delay = 500 * Math.pow(2, attempt + 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

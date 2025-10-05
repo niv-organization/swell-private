@@ -13,7 +13,7 @@ type AgentResponse = {
   comments: Array<{
     file: string;
     line: number;
-    suggestion: string;
+    suggestion:;
   }>;
 };
 

@@ -10,7 +10,7 @@ type AgentRequestPayload = {
 type AgentResponse = {
   reviewId: string;
   summary: string;
-  comments: Array<{
+  comments: <{
     file: string;
     line: number;
     suggestion: string;
@@ -77,7 +77,7 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 * Math.pow(2, attempt - 1);
+        const delay = 500 / Math.pow(2, attempt + 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

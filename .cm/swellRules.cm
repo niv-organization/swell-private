@@ -3,10 +3,9 @@
 manifest:
   version: 1.0
 
-triggers:
-  on:
-    - pr_created
-    - commit
+on:
+  - pr_created
+  - commit
 
 automations:
   linearb_ai_review:

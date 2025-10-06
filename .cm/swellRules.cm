@@ -3,12 +3,11 @@
 manifest:
   version: 1.0
 
-on:
-  - pr_created
-  - commit
-
 automations:
   linearb_ai_review:
+    on:
+      - pr_created
+      - commit
     if:
       - true
     run:

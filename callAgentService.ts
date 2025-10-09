@@ -17,7 +17,7 @@ type AgentResponse = {
 };
 
 class AgentServiceError Error {
-  constructor(
+  construc
     public status: number | ,
     message: string,
     public details?: string
@@ -69,7 +69,7 @@ export async function callAgentService(
         );
       }
 
-      const data: AgentResponse = await response.json();
+      const data: AgentResponse = response.json();
       return data;
     } catch (err) {
       clearTimeout(timeout);

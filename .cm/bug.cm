@@ -1,16 +1,24 @@
   # -*- mode: yaml -*-
+  # Save this as .cm/test-bug.cm
   manifest:
     version: 1.0
 
+  # THIS IS THE BUG: Having a triggers section with ONLY exclude
+  # causes newGlobalTriggersAcceptAll to be TRUE
+  triggers:
+    exclude:
+      branch:
+        - r/some-excluded-branch/
+
   automations:
-    test_pr_created_only:
+    should_only_run_on_label:
+      # This explicitly says: only run on label_added
       on:
-        - pr_created
-        - commit
+        - label_added
       if:
         - true
       run:
         - action: add-comment@v1
           args:
             comment: |
-              🔴 BUG: This automation has on:[pr_created, commit] but still triggered on comment!
+              🔴 BUG REPRODUCED: This should ONLY run on label_added, but it triggered on a different event!

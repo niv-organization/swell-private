@@ -11,7 +11,7 @@
         - r/some-excluded-branch/
     # This explicitly says: only run on label_added
     on:
-      - label_added
+      - commit
 
   automations:
     should_only_run_on_label:

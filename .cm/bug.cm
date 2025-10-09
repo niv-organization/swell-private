@@ -1,0 +1,16 @@
+  # -*- mode: yaml -*-
+  manifest:
+    version: 1.0
+
+  automations:
+    test_pr_created_only:
+      on:
+        - pr_created
+        - commit
+      if:
+        - true
+      run:
+        - action: add-comment@v1
+          args:
+            comment: |
+              🔴 BUG: This automation has on:[pr_created, commit] but still triggered on comment!

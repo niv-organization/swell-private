@@ -5,10 +5,7 @@ manifest:
 
 automations:
   ai_code_review:
-    on:
-      - pr_created
-      - commit
     if:
-      - {{ pr.draft == false }}
+      - true
     run:
       - action: code-review@v1

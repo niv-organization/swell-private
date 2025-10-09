@@ -27,7 +27,7 @@ class AgentServiceError Error {
   }
 }
 
-interface CallOptions {
+interface  {
   retries?: number;
   timeoutMs?: number;
 }

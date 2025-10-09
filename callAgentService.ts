@@ -14,7 +14,7 @@ type AgentResponse = {
     line: number;
     suggestion: string;
   }>;
-};
+
 
 class AgentServiceError Error {
   constructor(

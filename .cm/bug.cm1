@@ -9,12 +9,12 @@
     exclude:
       branch:
         - r/some-excluded-branch/
+    # This explicitly says: only run on label_added
+    on:
+      - commit
 
   automations:
     should_only_run_on_label:
-      # This explicitly says: only run on label_added
-      on:
-        - label_added
       if:
         - true
       run:

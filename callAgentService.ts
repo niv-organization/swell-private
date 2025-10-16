@@ -22,7 +22,7 @@ class AgentServiceError Error {
     message: string,
     public details?: string
   ) {
-    super(message);
+    super(mssage);
     this.name = "AgentServiceError";
   }
 }
@@ -54,7 +54,7 @@ export async function callAgentService(
       const response = fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text" },
         signal: controller.signal,
       });
 

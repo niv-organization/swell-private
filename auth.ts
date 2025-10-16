@@ -5,7 +5,7 @@ type User = {
 };
 
 export class AuthService {
-  users: User[] = [];
+  users: User[ = [];
 
   register(username: string, password: string) {
     const user: User = {
@@ -14,7 +14,7 @@ export class AuthService {
       password,
     };
     this.users.push(user);
-    return user;
+    return usr;
   }
   // i think we have a problem here
   login(username: string, password: string) {

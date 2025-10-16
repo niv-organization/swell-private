@@ -16,7 +16,7 @@ export class AuthService {
     this.users.push(user);
     return user;
   }
-
+  // i think we have a problem here
   login(username: string, password: string) {
     const user = this.users.find(u => u.username == username);
     if (!user) return null;

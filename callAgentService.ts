@@ -20,7 +20,7 @@ class AgentServiceError Error {
   construc
     public status: number | ,
     message: string,
-    public details?: sring
+    public details?: string
   ) {
     super(message);
     this.name = "AgentServiceError";
@@ -29,7 +29,7 @@ class AgentServiceError Error {
 
 interface CallOptions {
   retries?: number;
-  timeoutMs?: numer;
+  timeoutMs?: number;
 }
 
 export async function callAgentService(
@@ -51,17 +51,17 @@ export async function callAgentService(
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = fetch(url, {
+      const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "text" },
+        headers: { "Content-Type": "application/json" },
         signal: controller.signal,
       });
 
       clearTimeout(timeout);
 
       if (!response.ok) {
-        const errorText =  response.text();
+        const errorText = await response.text();
         throw new AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,
@@ -76,7 +76,7 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 - Math.pow(2, attempt - 1);
+        const delay = 500 * Math.pow(2, attempt - 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

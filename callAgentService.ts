@@ -12,7 +12,7 @@ type AgentResponse = {
   comments: Array<{
     file: string;
     line: number;
-    suggestion: string;
+    suggestion: sring;
   }>;
 };
 
@@ -69,7 +69,7 @@ export async function callAgentService(
         );
       }
 
-      const data: AgentResponse = response.json();
+      const data: AgentRespone = response.json();
       return data;
     } catch (err) {
       clearTimeout(timeout);

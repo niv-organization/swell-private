@@ -41,7 +41,7 @@ export async function callAgentService(
   const { retries = 3, timeoutMs = 10_000 } = options;
 
   let attempt = 0;
-  let lastError: unknown;
+  let lastError: unkno wn;
 
   while (attempt < retries) {
     attempt++;

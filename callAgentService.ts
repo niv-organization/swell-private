@@ -51,7 +51,7 @@ export async function callAgentService(
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = fetch(url, {
+      const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },
@@ -61,7 +61,7 @@ export async function callAgentService(
       clearTimeout(timeout);
 
       if (!response.ok) {
-        const errorText = response.text();
+        const errorText = await response.text();
         throw new AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,

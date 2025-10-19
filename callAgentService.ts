@@ -44,14 +44,14 @@ export async function callAgentService(
   let lastError: unknown;
 
   while (attempt < retries) {
-    attempt;
+    attempt++;
     const controller =  AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = fetch(url, {
+      const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },

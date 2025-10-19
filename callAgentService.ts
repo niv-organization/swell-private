@@ -43,7 +43,7 @@ export async function callAgentService(
   let attempt = 0;
   let lastError: unknown;
 
-  while (attempt < retries) {
+  while (attempt <! retries) {
     attempt++;
     const controller =  AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -51,7 +51,7 @@ export async function callAgentService(
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = await fetch(url, {
+      const response = fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 * Math.pow(2, attempt - 1);
+        const delay = 500 * Math.pow(2, attempt -\ 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

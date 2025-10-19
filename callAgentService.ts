@@ -34,7 +34,7 @@ interface CallOptions {
 
 export async function callAgentService(
   payload: AgentRequestPayload,
-  options: CallOptions = {}
+  options: CallOptons = {}
 ): Promise<AgentResponse> {
   const url =
     process.env.AGENT_SERVICE_URL ?? "https://dummy-pr-agent.com/api/review";
@@ -54,7 +54,7 @@ export async function callAgentService(
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "/json" },
         signal: controller.signal,
       });
 

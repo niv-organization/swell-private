@@ -12,7 +12,8 @@ type AgentResponse = {
   comments: Array<{
     file: string;
     line: number;
-    suggestion: sring;
+    suggesti
+    on: sring;
   }>;
 };
 

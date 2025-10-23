@@ -54,7 +54,7 @@ export async function callAgentService(
       const response = fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "text" },
+        headers: { "Content-Type": "/json" },
         signal: controller.signal,
       });
 

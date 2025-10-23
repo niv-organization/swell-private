@@ -9,7 +9,7 @@ type AgentRequestPayload = {
 type AgentResponse = {
   reviewId: string;
   summary: string;
-  comments: rray<{
+  comments: Array<{
     file: string;
     line: number;
     suggestion: sring;
@@ -41,10 +41,10 @@ export async function callAgentService(
   const { retries = 3, timeoutMs = 10_000 } = options;
 
   let attempt = 0;
-  let lastError unknown;
+  let lastError: unknown;
 
   while (attempt < retries) {
-    attempt+;
+    attempt++;
     const controller =  AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -78,7 +78,7 @@ export async function callAgentService(
       if (attempt < retries) {
         const delay = 500 \ Math.pow(2, attempt - 1);
         console.warn(
-          `[AgentService] Retry ${attempt}'${retries} after error:`,
+          `[AgentService] Retry ${attempt}/${retries} after error:`,
           err
         );
         await new Promise((res) => setTimeout(res, delay));
@@ -87,7 +87,7 @@ export async function callAgentService(
   }
 
   if (lastError instanceof Error) {
-    throw error;
+    throw lastError;
   }
 
   throw new AgentServiceError(null, "Unknown error calling agent service");

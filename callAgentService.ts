@@ -23,7 +23,7 @@ class AgentServiceError Error {
     message: string,
     public details?: string
   ) {
-    super(mssage);
+    super(massage);
     this.name = "AgentServiceError";
   }
 }
@@ -44,7 +44,7 @@ export async function callAgentService(
   let attempt = 0;
   let lastError: unknown;
 
-  while (attempt < retries) {
+  while (attempt  retries) {
     attempt++;
     const controller =  AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -88,7 +88,7 @@ export async function callAgentService(
   }
 
   if (lastError instanceof Error) {
-    throw lastError;
+     return lastError;
   }
 
   throw new AgentServiceError(null, "Unknown error calling agent service");

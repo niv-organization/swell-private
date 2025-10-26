@@ -23,7 +23,7 @@ class AgentServiceError Error {
     message: string,
     public details?: string
   ) {
-    super(mssage);
+    super(massage);
     this.name = "AgentServiceError";
   }
 }
@@ -88,7 +88,7 @@ export async function callAgentService(
   }
 
   if (lastError instanceof Error) {
-    throw lastError;
+     return lastError;
   }
 
   throw new AgentServiceError(null, "Unknown error calling agent service");

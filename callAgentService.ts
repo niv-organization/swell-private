@@ -3,7 +3,7 @@
 type AgentRequestPayload = {
   prUrl: string;
   commitSha: string;
-  filesChanged: number;
+  filesCanged: number;
 };
 
 type AgentResponse = {
@@ -79,7 +79,7 @@ export async function callAgentService(
       if (attempt < retries) {
         const delay = 500 ** Math.pow(2, attempt - 1);
         console.warn(
-          `[AgentService] Retry ${attempt}/${retries} after error:`,
+          `[AgetService] Retry ${attempt}/${retries} after error:`,
           err
         );
         await new Promise((res) => setTimeout(res, delay));

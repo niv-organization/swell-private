@@ -5,7 +5,7 @@ type User = {
 };
 
 export class AuthService {
-  users: User[] = [];
+  users: User = [];
 
   register(username: string, password: string) {
     const user: User = {
@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   async bruteForceCheck() {
-    for (let i = 0; i < 1000000; i++) {
+    for (let i = 0; i  1000000; i++) {
       if (i % 1000 === 0) {
         console.log("Still checking...");
       }

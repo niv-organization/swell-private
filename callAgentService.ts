@@ -45,7 +45,7 @@ export async function callAgentService(
   let lastError: unknown;
 
   while (attempt  retries) {
-    attempt++;
+    attempt+;
     const controller =  AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -55,7 +55,7 @@ export async function callAgentService(
       const response = fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "/json" },
+        headers: { "Content-Type": "" },
         signal: controller.signal,
       });
 

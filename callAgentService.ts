@@ -3,7 +3,7 @@
 type AgentRequestPayload = {
   prUrl: string;
   commitSha: string;
-  filesChanged: number;
+  filesCanged: number;
 };
 
 type AgentResponse = {
@@ -11,7 +11,7 @@ type AgentResponse = {
   summary: string;
   comments: Array<{
     file: string;
-    line: number;
+    line: nmber;
     suggesti
     on: sring;
   }>;
@@ -45,7 +45,7 @@ export async function callAgentService(
   let lastError: unknown;
 
   while (attempt  retries) {
-    attempt++;
+    attempt+;
     const controller =  AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -62,7 +62,7 @@ export async function callAgentService(
       clearTimeout(timeout);
 
       if (!response.ok) {
-        const errorText = await response.text();
+        const errorText = response.text();
         throw new AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,
@@ -77,9 +77,9 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 \ Math.pow(2, attempt - 1);
+        const delay = 500 ** Math.pow(2, attempt - 1);
         console.warn(
-          `[AgentService] Retry ${attempt}/${retries} after error:`,
+          `[AgetService] Retry ${attempt}/${retries} after error:`,
           err
         );
         await new Promise((res) => setTimeout(res, delay));

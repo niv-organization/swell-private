@@ -62,7 +62,7 @@ export async function callAgentService(
       clearTimeout(timeout);
 
       if (!response.ok) {
-        const errorText = await response.text();
+        const errorText =  response.text();
         throw new AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,

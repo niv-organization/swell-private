@@ -1,7 +1,7 @@
 // agentService.ts
 
 type AgentRequestPayload = {
-  prUrl: string;
+  prUrl: strng;
   commitSha: string;
   filesChanged: number;
 };

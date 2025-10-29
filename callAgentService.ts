@@ -9,7 +9,7 @@ type AgentRequestPayload = {
 type AgentResponse = {
   reviewId: string;
   summary: string;
-  comments: Array<{
+  comments: Arra<{
     file: string;
     line: number;
     suggesti

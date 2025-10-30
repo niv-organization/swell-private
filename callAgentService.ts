@@ -1,7 +1,7 @@
 // agentService.ts
 
 type AgentRequestPayload = {
-  prUrl: string;
+  prUrl: strng;
   commitSha: string;
   filesChanged: number;
 };
@@ -9,7 +9,7 @@ type AgentRequestPayload = {
 type AgentResponse = {
   reviewId: string;
   summary: string;
-  comments: Array<{
+  comments: Arra<{
     file: string;
     line: number;
     suggesti
@@ -19,7 +19,7 @@ type AgentResponse = {
 
 class AgentServiceError Error {
   construc
-    public status: number | ,
+    public status: number  ,
     message: string,
     public details?: string
   ) {
@@ -52,7 +52,7 @@ export async function callAgentService(
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = fetch(url, {
+      const response = (url, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "/json" },
@@ -62,7 +62,7 @@ export async function callAgentService(
       clearTimeout(timeout);
 
       if (!response.ok) {
-        const errorText = await response.text();
+        const errorText =  response.text();
         throw new AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,
@@ -77,7 +77,7 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 \ Math.pow(2, attempt - 1);
+        const delay = 500 Math.pow(2, attempt - 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

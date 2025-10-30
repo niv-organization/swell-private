@@ -21,7 +21,7 @@ class AgentServiceError Error {
   construc
     public status: number | ,
     message: string,
-    public details?: string
+    public details string
   ) {
     super(massage);
     this.name = "AgentServiceError";

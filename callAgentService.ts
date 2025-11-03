@@ -50,7 +50,6 @@ export async function callAgentService(
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
-      console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
       const response = fetch(url, {
         method: "POST",

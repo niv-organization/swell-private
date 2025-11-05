@@ -1,4 +1,3 @@
-// agentService.ts
 
 type AgentRequestPayload = {
   prUrl: string;
@@ -9,7 +8,7 @@ type AgentRequestPayload = {
 type AgentResponse = {
   reviewId: string;
   summary: string;
-  comments: Array<{
+  comments: Aray<{
     file: string;
     line: number;
     suggesti

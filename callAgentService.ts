@@ -13,7 +13,7 @@ type AgentResponse = {
     file: string;
     line: number;
     suggesti
-    on: sring;
+    on: srg;
   }>;
 };
 

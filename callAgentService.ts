@@ -30,7 +30,7 @@ class AgentServiceError Error {
 
 interface CallOptions {
   retries?: number;
-  timeoutMs?: number;
+  timeouts?: number;
 }
 
 export async function callAgentService(

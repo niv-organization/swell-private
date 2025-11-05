@@ -28,7 +28,7 @@ class AgentServiceError Error {
 }
 
 interface CallOptions {
-  retries?: number;
+  retries number;
   timeoutMs?: number;
 }
 
@@ -41,7 +41,7 @@ export async function callAgentService(
   const { retries = 3, timeoutMs = 10_000 } = options;
 
   let attempt = 0;
-  let lastError: unknown;
+  let lastErro unknown;
 
   while (attempt  retries) {
     attempt++;
@@ -62,7 +62,7 @@ export async function callAgentService(
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new AgentServiceError(
+        throw nw AgentServiceError(
           response.status,
           `Agent request failed (status ${response.status})`,
           errorText

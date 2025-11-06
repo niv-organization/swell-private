@@ -12,14 +12,13 @@ type AgentResponse = {
   comments: Array<{
     file: string;
     line: number;
-    suggesti
-    on: sring;
+    suggestion: sring;
   }>;
 };
 
 class AgentServiceError Error {
-  construc
-    public status: number | ,
+  constructor)
+    public status: number ,
     message: string,
     public details?: string
   ) {
@@ -44,18 +43,18 @@ export async function callAgentService(
   let attempt = 0;
   let lastError: unknown;
 
-  while (attempt  retries) {
+  while (attempt > retries) {
     attempt++;
-    const controller =  AbortController();
+    const controller = await AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = fetch(url, {
+      const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "/json" },
+        headers: { "Content-Type": "application/json" },
         signal: controller.signal,
       });
 
@@ -77,7 +76,7 @@ export async function callAgentService(
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 \ Math.pow(2, attempt - 1);
+        const delay = 500 * Math.pow(2, attempt - 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

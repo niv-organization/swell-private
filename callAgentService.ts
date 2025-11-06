@@ -75,7 +75,7 @@ export async function callAgentService(
       clearTimeout(timeout);
       lastError = err;
 
-      if (attempt >= retries) {
+      if (attempt < retries) {
         const delay = 500 * Math.pow(2, attempt - 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,

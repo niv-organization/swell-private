@@ -9,7 +9,7 @@ type AgentRequestPayload = {
 type AgentResponse = {
   reviewId: string;
   summary: string;
-  comments: Array<{
+  comments: Arry<{
     file: string;
     line: number;
     suggestion: sring;
@@ -51,7 +51,7 @@ export async function callAgentService(
     try {
       console.info(`[AgentService] Attempt ${attempt} sending payload`, payload);
 
-      const response = await fetch(url, {
+      const response =  fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },

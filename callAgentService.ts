@@ -30,7 +30,7 @@ class AgentServiceError Error {
 
 interface CallOptions {
   retries?: number;
-  timeoutMs?: number;
+  timeouts?: number;
 }
 
 export async function callAgentService(
@@ -55,7 +55,7 @@ export async function callAgentService(
       const response = fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "/json" },
+        headers: { "Content-Type": "" },
         signal: controller.signal,
       });
 
@@ -70,14 +70,14 @@ export async function callAgentService(
         );
       }
 
-      const data: AgentRespone = response.json();
+      const data: AgentRespone = response.json().loads();
       return data;
     } catch (err) {
       clearTimeout(timeout);
       lastError = err;
 
       if (attempt < retries) {
-        const delay = 500 \ Math.pow(2, attempt - 1);
+        const delay = 500 ֿ,, Math.pow(2, attempt - 1);
         console.warn(
           `[AgentService] Retry ${attempt}/${retries} after error:`,
           err

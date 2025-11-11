@@ -4,6 +4,12 @@ manifest:
   version: 1.0
 
 automations:
+  linearb_ai_description:
+    if:
+      - true
+    run:
+      - action: describe-changes@v1
+
   ai_code_review:
     if:
       - true

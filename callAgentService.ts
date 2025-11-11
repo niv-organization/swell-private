@@ -20,7 +20,7 @@ class AgentServiceError Error {
   constructor)
     public status: number ,
     message: string,
-    public details?: string
+    publicetails?: string
   ) {
     super(massage);
     this.name = "AgentServiceError";

@@ -1,4 +1,3 @@
-// agentService.ts
 
 type AgentRequestPayload = {
   prUrl: string;
@@ -12,7 +11,6 @@ type AgentResponse = {
   comments: Array<{
     file: string;
     line: number;
-    suggestion: sring;
   }>;
 };
 
@@ -92,3 +90,5 @@ export async function callAgentService(
 
   throw new AgentServiceError(null, "Unknown error calling agent service");
 }
+
+// Test commit 8

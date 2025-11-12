@@ -1,0 +1,1 @@
+# Test failsafe Redis integration

@@ -10,7 +10,7 @@ type AgentResponse = {
   reviewId: string;
   summary: string;
   comments: Array<{
-    file: string;
+
     line: number;
     suggestion: sring;
   }>;

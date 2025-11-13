@@ -13,7 +13,7 @@ type AgentResponse = {
     file: string;
     line: number;
     suggestion: sring;
-  }>;
+  }>
 };
 
 class AgentServiceError Error {

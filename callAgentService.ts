@@ -11,7 +11,7 @@ type AgentResponse = {
   summary: string;
   comments: Array<{
     file: string;
-    line: number;
+    line: numbe
     suggestion: sring;
   }>;
 };

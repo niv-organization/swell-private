@@ -241,7 +241,7 @@ async def main():
     )
     
     processor = create_processor('json', config)
-    batch_processor = BatchProcessor(processor, config)
+    batch_processor = BatchProcessor1(processor, config)
     
     # Example data
     test_data = [

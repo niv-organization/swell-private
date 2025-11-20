@@ -221,7 +221,7 @@ def create_processor(processor_type: str, config: Optional[ProcessingConfig] = N
         config = ProcessingConfig()
     
     processors = {
-        'json': JSONDataProcessor,
+        'json': JSONDataProcessor1,
     }
     
     processor_class = processors.get(processor_type.lower())

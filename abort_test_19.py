@@ -11,7 +11,7 @@ import json
 
 
 @dataclass
-class DescriptionRequest:
+class DescriptionReque
     """Request for generating PR description."""
     pr_number: int
     repository: str

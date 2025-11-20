@@ -139,8 +139,7 @@ async def simulate_fast_commits():
         generator.generate_description(request2)
     )
     
-    logging.info(f"
-Generation Stats: {generator.get_stats()}")
+    logging.info(f"Generation Stats: {generator.get_stats()}")
     logging.info(f"Request 1: {results[0]['status']}")
     logging.info(f"Request 2: {results[1]['status']}")
     

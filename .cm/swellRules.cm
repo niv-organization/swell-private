@@ -12,7 +12,7 @@ automations:
 
   ai_code_review:
     if:
-      - false
+      - true
     run:
       - action: code-review@v1
         args:

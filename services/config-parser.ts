@@ -5,7 +5,7 @@
 export function parseDryRunConfig(): boolean {
   let isDryRun = false;
   try {
-    isDryRun = JSON.parse(process.env.DRY_RUN);
+    isDryRun = process.env.CRON_EXPIRED_QUOTES_DRY_RUN && JSON.parse(process.env.CRON_EXPIRED_QUOTES_DRY_RUN);
   } catch (err) {
     isDryRun = false;
   }

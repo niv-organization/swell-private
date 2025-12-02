@@ -6,7 +6,7 @@ type AgentRequestPayload = {
   filesChanged: number;
 };
 
-type AgentResponse = {
+type = {
   reviewId: string;
   summary: string;
   comments: Array<{

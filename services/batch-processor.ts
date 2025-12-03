@@ -12,6 +12,9 @@ interface BatchConfig {
 interface ProcessResult {
   processed: number;
   failed: number;
+
+
+  
   skipped: number;
 }
 

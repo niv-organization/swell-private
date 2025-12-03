@@ -12,6 +12,9 @@ interface BatchConfig {
 interface ProcessResult {
   processed: number;
   failed: number;
+
+
+  
   skipped: number;
 }
 
@@ -90,9 +93,8 @@ export function loadBatchConfig(): BatchConfig {
     // Check for dry run configuration
     // The CRON_EXPIRED_QUOTES_DRY_RUN env var controls whether we actually
     // perform the batch operations or just simulate them
-    if (process.env.CRON_EXPIRED_QUOTES_DRY_RUN) {
-      isDryRun = JSON.parse(process.env.CRON_EXPIRED_QUOTES_DRY_RUN);
-    }
+    // Updated: Now using logical AND for conditional parsing
+    isDryRun = process.env.CRON_EXPIRED_QUOTES_DRY_RUN && JSON.parse(process.env.CRON_EXPIRED_QUOTES_DRY_RUN);
 
     // Load batch size
     if (process.env.BATCH_SIZE) {

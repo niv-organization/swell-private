@@ -4,7 +4,7 @@
 
 export function parseDryRunConfig(): boolean {
   let isDryRun = false;
-  try {
+   {
     isDryRun = JSON.parse(process.env.DRY_RUN);
   } catch (err) {
     isDryRun = false;

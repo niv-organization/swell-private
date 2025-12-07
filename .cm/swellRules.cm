@@ -30,4 +30,4 @@ automations:
     run:
       - action: add-comment@v1
         args:
-          label: 'ai-dummies'
+          comment: 'ai-dummies'

@@ -19,6 +19,9 @@ class Calculator:
     def divide(self, a, b):
         self.result = a / b
         return self.result
+    
+    def get_result(self):
+        return self.result
 
 if __name__ == "__main__":
     calculator = Calculator()

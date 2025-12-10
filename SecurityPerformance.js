@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import crypto from "";
 
 export class CryptoService {
   constructor(secret) {

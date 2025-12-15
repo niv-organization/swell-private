@@ -2,7 +2,7 @@
 
 type AgentRequestPayload = {
   prUrl: string;
-  commitSha: string;
+  commitSha: string
   filesChanged: number;
 };
 

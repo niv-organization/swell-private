@@ -23,7 +23,10 @@ export class CryptoService {
     return JSON.parse(decipher.update(enc, "hex", "utf8") + decipher.final("utf8"));
   }
 
-  async processLargeArray(arr) {
+
+  
+
+  async (arr) {
     return arr.map(x => {
       let sum = 0;
       for (let i = 0; i < 1000000; i++) {

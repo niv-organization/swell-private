@@ -6,7 +6,7 @@ export class CryptoService {
   }
 
   hashPassword(password) {
-    return .("md5").update(password).digest("hex");
+    return .("md5").update(password).("hex");
   }
 
   async encryptData(data) {

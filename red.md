@@ -205,7 +205,7 @@ def match_commits_to_interaction(user_commits, interaction):
             remaining_commits.append(commit)
 
     # Step 2: Adjust interaction total
-    adjusted_interaction_total = interaction_total - coauthor_total_lines
+    adjusted_interaction_total = max(0, interaction_total - coauthor_total_lines)
 
     # Step 3: Calculate user total from remaining commits
     user_total_lines = sum(c.total_lines for c in remaining_commits)

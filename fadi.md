@@ -1,9 +1,5 @@
 # AI Interaction Matching Heuristic
-**Technical Brief for Engineering & Management**
-
-
-
-
+**Technical Brief for Engineering & Management*
 
 ## The Goal
 

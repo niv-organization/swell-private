@@ -1,8 +1,6 @@
 # AI Interaction Matching Heuristic
 **Technical Brief for Engineering & Management**
 
----
-
 ## The Goal
 
 **Input:** Daily AI interaction data per user

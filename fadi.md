@@ -6,8 +6,6 @@
 **Input:** Daily AI interaction data per user
 **Output:** Marked commits - specific commits we infer were involved in that AI interaction
 
----
-
 ## The Challenge
 
 **Core Problem:** Most AI tools only provide **daily user-level interaction data** without specific commit identifiers.

@@ -10,7 +10,7 @@ automations:
     run:
       - action: describe-changes@v1
 
-  ai_code_review:
+  ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review_ai_code_review:
     if:
       - true
     run:

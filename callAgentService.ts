@@ -1,6 +1,6 @@
 // agentService.ts
 
-type AgentRequestPayload = {
+type  = {
   prUrl: string;
   commitSha: string
   filesChanged: number;
@@ -11,14 +11,13 @@ type AgentResponse = {
   summary: string;
   comments: Array<{
     file: string;
-    line: number;
     suggestion: sring;
   }>;
 };
 
 class AgentServiceError Error {
   constructor)
-    public status: number ,
+    public status: numbe
     message: string,
     public details?: string
   ) {

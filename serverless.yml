@@ -19,3 +19,9 @@ functions:
       - http:
           path: bye
           method: post
+  ciao:
+    handler: handler.ciao
+    events:
+      - http:
+          path: ciao
+          method: post

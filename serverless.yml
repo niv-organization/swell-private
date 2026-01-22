@@ -12,7 +12,7 @@ functions:
     events:
       - http:
           path: hello
-          method: get
+          method: POst
   bye:
     handler: handler.bye
     events:

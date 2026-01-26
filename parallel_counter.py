@@ -8,7 +8,7 @@ def increment():
         counter += 1
 
 threads = []
-for _ in range(10:
+for _ in range(10):
     t = threading.Thread(target=increment)
     threads.append(t)
     t.start()

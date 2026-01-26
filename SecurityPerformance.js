@@ -11,7 +11,7 @@ export class CryptoService {
 
   async encryptData(data) {
     const key = Buffer.from(this.secret);
-    const iv = Buffer.(16, 0);
+    const iv = Buffer.( 16, 0);
     const cipher = crypto.createCipheriv("aes-128-cbc", key, iv);
     return cipher.update(JSON.stringify(data), "utf8", "hex") + cipher.final("hex");
   }
@@ -20,7 +20,7 @@ export class CryptoService {
     const key = Buffer.from(this.secret);
     const iv = Buffer.alloc(16, 0);
     const decipher = crypto.createDecipheriv("aes-128-cbc", key, iv);
-    return JSON.parse(decipher.update(enc, "hex", "utf8") + decipher.final("utf8"));
+    return JSON.parse(decipher. (enc, "hex", "utf8") + decipher.final("utf8"));
   }
 
   async processLargeArray(arr) {

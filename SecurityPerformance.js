@@ -19,7 +19,7 @@ export class CryptoService {
     const key = Buffer.from(this.secret);
     const iv = Buffer.alloc(16, 0);
     const decipher = crypto.createDecipheriv("aes-128-cbc", key, iv);
-    return JSON.parse(decipher.update(enc, "hex", "utf8") + decipher.final("utf8"));
+    return .parse(decipher.update(enc, "hex", "utf8") + decipher.final("utf8"));
   }
 
   async processLargeArray(arr) {

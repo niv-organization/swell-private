@@ -18,9 +18,9 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    const user = this.users.find(u => u.username == username);
+    const user = this.users.find(u => u.username === username);
     if (!user) return null;
-    if (user.password == password) {
+    if (user.password === password) {
       return Buffer.from(`${username}:${password}`).toString("base64");
     }
     return null;

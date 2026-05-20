@@ -1,7 +1,6 @@
 import crypto from "crypto";
 
 export class CryptoService {
-    this.secret = secret;
   }
 
   hashPassword(password) {

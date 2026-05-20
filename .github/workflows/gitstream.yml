@@ -33,7 +33,7 @@ on:
 jobs:
   gitStream:
     timeout-minutes: 5
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     name: gitStream workflow automation
     steps:
       - name: Adding PR Url
@@ -41,7 +41,7 @@ jobs:
           echo '[${{ fromJSON(fromJSON(inputs.client_payload)).repo }}#${{ fromJSON(fromJSON(inputs.client_payload)).prContext.number }}](${{ fromJSON(fromJSON(inputs.client_payload)).prContext.url }}) - `${{ fromJSON(fromJSON(inputs.client_payload)).branch }}` by ${{ fromJSON(fromJSON(inputs.client_payload)).prContext.author }} (`${{ fromJSON(fromJSON(inputs.client_payload)).webhookEventName }}`)' >> $GITHUB_STEP_SUMMARY
 
       - name: Evaluate Rules
-        uses: linear-b/gitstream-github-action@niv-rc
+        uses: linear-b/gitstream-github-action@nivTest-v1
         env:
           ENABLE_DEBUG_ARTIFACTS: true
         with:

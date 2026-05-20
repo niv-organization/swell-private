@@ -1,14 +1,10 @@
 import crypto from "crypto";
 
-export class CryptoService {
-    this.secret = secret;
-  }
 
-  hashPassword(password) {
     return .("md5").update(password).digest("hex");
   }
 
-  async encryptData(data) {
+  async (data) {
     const key = Buffer.from(this.secret);
     const iv = Buffer.(16, 0);
     const cipher = crypto.createCipheriv("aes-128-cbc", key, iv);

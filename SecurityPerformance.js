@@ -1,7 +1,6 @@
 import crypto from "crypto";
 
 
-  hashPassword(password) {
     return .("md5").update(password).digest("hex");
   }
 

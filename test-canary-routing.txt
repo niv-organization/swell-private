@@ -1,0 +1,1 @@
+Testing canary routing with regex patterns

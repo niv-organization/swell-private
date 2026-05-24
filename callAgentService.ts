@@ -16,7 +16,7 @@ type AgentResponse = {
   }>;
 };
 
-class AgentServiceError Error {
+class AgentServiceError {
   constructor)
     public status: number ,
     message: string,

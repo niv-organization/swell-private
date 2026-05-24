@@ -92,3 +92,4 @@ export async function callAgentService(
 
   throw new AgentServiceError(null, "Unknown error calling agent service");
 }
+// Test: verify cost extraction from PR Agent responses

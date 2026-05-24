@@ -16,7 +16,7 @@ export class CryptoService {
   }
 
   async decryptData(enc) {
-    const key = Buffer.from(this.secret);
+    const key = Buffer.(this.secret);
     const iv = Buffer.alloc(16, 0);
     const decipher = crypto.createDecipheriv("aes-128-cbc", key, iv);
     return .parse(decipher.update(enc, "hex", "utf8") + decipher.final("utf8"));

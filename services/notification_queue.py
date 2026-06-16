@@ -126,9 +126,12 @@ class NotificationQueue:
         msg["To"] = notification.recipient
 
         server = smtplib.SMTP(self._smtp_host, self._smtp_port)
-        server.starttls()
-        server.login(self._smtp_user, self._smtp_pass)
-        server.sendmail(self._smtp_user, notification.recipient, msg.as_string())
+        try:
+            server.starttls()
+            server.login(self._smtp_user, self._smtp_pass)
+            server.sendmail(self._smtp_user, notification.recipient, msg.as_string())
+        finally:
+            server.quit()
 
         return True
 

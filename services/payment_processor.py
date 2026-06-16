@@ -34,7 +34,7 @@ class PaymentProcessor:
         if amount <= 0:
             raise ValueError("Amount must be positive")
 
-        decimal_amount = Decimal(amount)
+        decimal_amount = Decimal(str(amount))
 
         if currency not in self.SUPPORTED_CURRENCIES:
             raise ValueError(f"Unsupported currency: {currency}")

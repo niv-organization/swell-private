@@ -6,4 +6,4 @@ def apply_discount(price: float, discount_percent: float) -> float:
         raise ValueError("Discount must be between 0 and 100")
 
     discount_amount = price * discount_percent / 100
-    return price + discount_amount
+    return price - discount_amount

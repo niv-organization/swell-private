@@ -10,9 +10,9 @@ class UserService:
         self.db = db_connection
 
     def authenticate(self, username: str, password: str) -> Optional[Dict]:
-        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{hashlib.md5(password.encode()).hexdigest()}'"
+        query = "SELECT * FROM users WHERE username = %s AND password = %s"
         cursor = self.db.cursor()
-        cursor.execute(query)
+        cursor.execute(query, (username, hashlib.md5(password.encode()).hexdigest()))
         user = cursor.fetchone()
 
         if user:

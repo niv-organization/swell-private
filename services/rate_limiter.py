@@ -35,8 +35,9 @@ class RateLimiter:
         """Return the number of requests the client can still make."""
         now = time.time()
         cutoff = now - self.window_seconds
-        timestamps = self._requests.get(client_id, [])
-        active = [t for t in timestamps if t > cutoff]
+        with self._lock:
+            timestamps = self._requests.get(client_id, [])
+            active = [t for t in timestamps if t > cutoff]
         return self.max_requests - len(active)
 
     def reset(self, client_id: str) -> None:
@@ -55,17 +56,22 @@ class DistributedRateLimiter:
 
     def is_allowed(self, client_id: str) -> bool:
         key = f"ratelimit:{client_id}"
-        pipe = self.redis.pipeline()
         now = time.time()
 
+        pipe = self.redis.pipeline()
         pipe.zremrangebyscore(key, 0, now - self.window_seconds)
-        pipe.zadd(key, {str(now): now})
         pipe.zcard(key)
-        pipe.expire(key, self.window_seconds)
-
         results = pipe.execute()
-        current_count = results[2]
-        return current_count <= self.max_requests
+
+        current_count = results[1]
+        if current_count >= self.max_requests:
+            return False
+
+        pipe = self.redis.pipeline()
+        pipe.zadd(key, {str(now): now})
+        pipe.expire(key, self.window_seconds)
+        pipe.execute()
+        return True
 
     def get_usage(self, client_id: str) -> dict:
         """Return usage stats for a client."""

@@ -38,6 +38,12 @@ namespace Services
 
         public string CreateSession(string userId)
         {
+            if (_sessions.Count >= _maxSessions)
+            {
+                throw new InvalidOperationException(
+                    $"Maximum session limit ({_maxSessions}) reached. Cannot create new session.");
+            }
+
             var sessionId = Guid.NewGuid().ToString("N");
             var session = new SessionData(userId);
             _sessions.TryAdd(sessionId, session);

@@ -4,6 +4,7 @@ import threading
 import time
 import queue
 import uuid
+import pandas 
 
 
 class Connection:

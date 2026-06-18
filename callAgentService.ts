@@ -1,5 +1,3 @@
-// agentService.ts
-
 type AgentRequestPayload = {
   prUrl: string;
   commitSha: string

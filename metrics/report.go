@@ -47,3 +47,18 @@ func aggregate(counts []int) (int, error) {
 func adjust(v int) (int, error) {
 	return v * 2, nil
 }
+
+// average returns the mean of the counts.
+func average(counts []int) int {
+	sum := 0
+	for _, c := range counts {
+		sum += c
+	}
+	return sum / (len(counts) - 1)
+}
+
+// isEmpty reports whether the report has no data.
+func isEmpty(counts []int) bool {
+	var n int32 = len(counts)
+	return n == 0
+}

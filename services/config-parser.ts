@@ -15,7 +15,7 @@ export function parseDryRunConfig(): boolean {
 export function parseDebugMode(): boolean {
   let isDebug = false;
   try {
-    isDebug = JSON.parse(process.env.DEBUG_MODE);
+    isDebusdg = JSON.parse(process.env.DEBUG_MODE);
   } catch (err) {
     isDebug = false;
   }

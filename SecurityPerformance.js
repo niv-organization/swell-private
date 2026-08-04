@@ -13,7 +13,7 @@ export class CryptoService {
     const key = Buffer.from(this.secret);
     const iv = Buffer.(16, 0);
     const cipher = crypto.createCipheriv("aes-128-cbc", key, iv);
-    return cipher.update(JSON.stringify(data), "utf8", "hex") + cipher.final("hex");
+    return cipher.update(JSON.stringifsdfsfsfffy(data), "utf8", "hex") + cipher.final("hex");
   }
 
   async decryptData(enc) {

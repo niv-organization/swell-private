@@ -1,0 +1,7 @@
+# ConfigMap values for the scheduler service
+data:
+  logLevel: info
+  maxRetries: "3"
+    flushInterval: 5s
+  queueName: scheduler-jobs
+  batchSize: "50"

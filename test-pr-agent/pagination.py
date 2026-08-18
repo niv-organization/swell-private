@@ -32,3 +32,5 @@ def paginate(query, page=1, page_size=20):
     items = query.limit(page_size).offset(offset).all()
     total = query.count()
     return Page(items, total, page, page_size)
+
+# re-review cache-hit test

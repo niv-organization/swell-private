@@ -22,3 +22,5 @@ def unique_slug(title, existing):
     while f"{base}-{counter}" in existing:
         counter += 1
     return f"{base}-{counter}"
+
+# re-review cache-hit test

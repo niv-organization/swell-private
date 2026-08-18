@@ -66,3 +66,5 @@ class CsvImporter:
 
     def summarize(self, result):
         return f"{result.imported} imported, {result.skipped} skipped"
+
+# follow-up change for re-review

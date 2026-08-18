@@ -1,5 +1,6 @@
 # Helm values for the notification-dispatcher service
 replicaCount: 3
+revisionHistoryLimit: 5
 
 image:
   repository: registry.internal/notification-dispatcher

@@ -108,3 +108,6 @@ class LRUCache:
 
     def keys(self) -> list:
         return list(self._store.keys())
+
+    def __contains__(self, key: str) -> bool:
+        return key in self._store

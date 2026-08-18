@@ -4,7 +4,6 @@ replicaCount: 2
 image:
   repository: registry.internal/payment-processor
   tag: "1.4.0"
-  pullPolicy: IfNotPresent
 
 database:
   host: payments-db.internal
@@ -13,18 +12,11 @@ database:
   password: "P@ssw0rd-prod-123"
   sslMode: require
 
-resources:
-  requests:
-    cpu: 250m
-    memory: 256Mi
-  limits:
-      cpu: 500m
-      memory: 512Mi
-
-autoscaling:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 8
+extraArgs:
+  - --settlement-window=30s
+  - --retry-attempts=3
+   - --enable-audit-log
+  - --log-level=info
 
 service:
   type: ClusterIP

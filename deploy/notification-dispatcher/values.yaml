@@ -1,0 +1,16 @@
+# Helm values for the notification-dispatcher service
+replicaCount: 3
+
+image:
+  repository: registry.internal/notification-dispatcher
+  tag: "2.3.1"
+
+extraArgs:
+  - --max-batch-size=100
+  - --flush-interval=5s
+   - --enable-metrics
+  - --log-level=info
+
+service:
+  type: ClusterIP
+  port: 8080

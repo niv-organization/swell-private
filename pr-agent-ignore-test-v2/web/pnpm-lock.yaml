@@ -1,0 +1,21 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+  .:
+    dependencies:
+      axios:
+        specifier: ^1.6.0
+        version: 1.6.0
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+
+packages:
+  axios@1.6.0:
+    resolution: {integrity: sha512-EZ1DYihju9pwVB7jRw+t2Ntj15FBm4qP3E5rGSPHtNpqoRJ4wsuP2XTd8P8+3aZ7GJ0OZ0FZ0FZ0FZ0FZ0FZ0A==}
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvKw==}

@@ -3,12 +3,6 @@
 manifest:
   version: 1.0
 
-triggers:
-  on:
-    - commit
-    - pr_created
-    - merge
-
 automations:
   linearb_ai_description:
     if:

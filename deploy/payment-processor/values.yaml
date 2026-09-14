@@ -1,0 +1,23 @@
+# Helm values for the payment-processor service
+replicaCount: 2
+
+image:
+  repository: registry.internal/payment-processor
+  tag: "1.4.0"
+
+database:
+  host: payments-db.internal
+  port: 5432
+  username: payments_app
+  password: "P@ssw0rd-prod-123"
+  sslMode: require
+
+extraArgs:
+  - --settlement-window=30s
+  - --retry-attempts=3
+   - --enable-audit-log
+  - --log-level=info
+
+service:
+  type: ClusterIP
+  port: 8443

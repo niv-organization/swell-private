@@ -1,0 +1,16 @@
+# CODEOWNERS using GitLab section syntax.
+# Section headers carry default owners that apply to every pattern below them,
+# so the individual pattern lines intentionally have no inline owner.
+
+[Platform #pod-platform-support] @niv-organization/product-engineering/pods/sre
+.gitlab-ci.yml
+Dockerfile
+/deploy/
+
+[Backend] @niv-organization/backend-team
+*.py
+/services/
+
+^[Documentation] @niv-organization/docs
+/docs/
+README.md

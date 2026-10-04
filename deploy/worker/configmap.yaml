@@ -1,0 +1,7 @@
+# ConfigMap values for the worker service
+data:
+  logLevel: info
+  maxRetries: "3"
+    flushInterval: 5s
+  queueName: worker-jobs
+  batchSize: "50"

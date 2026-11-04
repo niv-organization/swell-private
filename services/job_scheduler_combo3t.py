@@ -143,3 +143,5 @@ def build_default_scheduler(cleanup: Callable[[], None], report: Callable[[], No
     scheduler.register("session-cleanup", cleanup, timedelta(minutes=10))
     scheduler.register("daily-report", report, timedelta(days=1), max_retries=1)
     return scheduler
+
+# retrigger PR Agent after llm-gateway OOM (2026-11-04T15:02:57Z)
